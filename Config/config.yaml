@@ -1,0 +1,1506 @@
+tasks:
+  '101':
+    task:
+      actions:
+        - step_no: 1
+          action_type: click
+          locator_type: id
+          locator_value: userid
+          description: Click on username
+          input_field: null
+        - step_no: 2
+          action_type: send_keys
+          locator_type: id
+          locator_value: userid
+          description: send username
+          input_field:
+            type: command_line
+            field_name: username
+        - step_no: 3
+          action_type: click
+          locator_type: id
+          locator_value: password
+          description: CLick on  password
+          input_field: null
+        - step_no: 4
+          action_type: send_keys
+          locator_type: id
+          locator_value: password
+          description: Send password
+          input_field:
+            type: command_line
+            field_name: password
+        - step_no: 5
+          action_type: click
+          locator_type: id
+          locator_value: btnActive
+          description: Click on Sign In Button
+          input_field: null
+        - step_no: 6
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 7
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmil3u'
+          description: Click on Setting and Action
+          input_field: {}
+        - step_no: 6
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 8
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmi4'
+          description: Click on Setup and Maintenance
+          input_field: {}
+        - step_no: 9
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 10
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+          description: Click on Task Button
+          input_field: {}
+        - step_no: 11
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 12
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+          description: Click on Search Box
+          input_field: {}
+        - step_no: 13
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 14
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:it1::content'
+          description: Send the Config Name
+          input_field:
+            type: fixed
+            value: Manage Transmission Configurations
+        - step_no: 15
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 16
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 17
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 18
+          action_type: click
+          locator_type: xpath
+          locator_value: '//*[contains(text(), ''Manage Transmission Configurations'')]'
+          description: Click on Manage Transmission Config
+          input_field: {}
+        - step_no: 19
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 20
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content
+          description: Click on Input Value
+          input_field: {}
+        - step_no: 21
+          action_type: send_keys
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content
+          description: Send Config Name
+          input_field:
+            type: input_file
+            field_name: Configuration Name
+        - step_no: 22
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1::search'
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 23
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 24
+          action_type: click
+          locator_type: xpath
+          locator_value: >-
+            //div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(),
+            '{configuration_name}')]
+          description: Click on Search Config
+          input_field: {}
+        - step_no: 25
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 26
+          action_type: click
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name1}')]/following::input[@type='text']
+          description: Search for Column Name1
+          input_field: {}
+        - step_no: 27
+          action_type: retrieve_value
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name1}')]/following::input[@type='text']
+          description: Retrieve the value from the input box for column_name1
+          output_field: old_value_column1
+        - step_no: 28
+          action_type: send_keys
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name1}')]/following::input[@type='text']
+          description: Send Column 1 associated value
+          input_field:
+            type: input_file
+            field_name: Value1
+        - step_no: 29
+          action_type: wait
+          duration: 3
+          description: Wait for the page
+          input_field: {}
+        - step_no: 30
+          action_type: click
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name2}')]/following::input[@type='text']
+          description: Search for Column Name2
+          input_field: {}
+        - step_no: 31
+          action_type: retrieve_value
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name2}')]/following::input[@type='text']
+          description: Retrieve the value from the input box for column_name2
+          output_field: old_value_column2
+        - step_no: 32
+          action_type: send_keys
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name2}')]/following::input[@type='text']
+          description: Send Column 2 associated value
+          input_field:
+            type: input_file
+            field_name: Value2
+        - step_no: 33
+          action_type: wait
+          duration: 3
+          description: Wait for the page
+          input_field: {}
+        - step_no: 34
+          action_type: click
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name3}')]/following::input[@type='text']
+          description: Search for Column Name3
+          input_field: {}
+        - step_no: 35
+          action_type: retrieve_value
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name3}')]/following::input[@type='text']
+          description: Retrieve the value from the input box for column_name3
+          output_field: old_value_column3
+        - step_no: 36
+          action_type: send_keys
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name3}')]/following::input[@type='text']
+          description: Send Column 3 associated value
+          input_field:
+            type: input_file
+            field_name: Value3
+        - step_no: 37
+          action_type: wait
+          duration: 3
+          description: Wait for the page
+          input_field: {}
+        - step_no: 38
+          action_type: click
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name4}')]/following::input[@type='text']
+          description: Search for Column Name4
+          input_field: {}
+        - step_no: 39
+          action_type: retrieve_value
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name4}')]/following::input[@type='text']
+          description: Retrieve the value from the input box for column_name4
+          output_field: old_value_column4
+        - step_no: 40
+          action_type: send_keys
+          locator_type: xpath
+          locator_value: >-
+            //*[contains(text(),
+            '{column_name4}')]/following::input[@type='text']
+          description: Send Column 4 associated value
+          input_field:
+            type: input_file
+            field_name: Value4
+        - step_no: 41
+          action_type: wait
+          duration: 3
+          description: Wait for the page
+          input_field: {}
+        - step_no: 42
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:1:AP1:APscl2'
+          description: Click on Save and close button
+          input_field: {}
+        - step_no: 43
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 44
+          action_type: click
+          locator_type: id
+          locator_value: 'd1::msgDlg::cancel'
+          description: Click on Ok button
+          input_field: {}
+  '102':
+    task:
+      actions:
+        - step_no: 1
+          action_type: click
+          locator_type: id
+          locator_value: userid
+          description: Click on username
+          input_field: null
+        - step_no: 2
+          action_type: send_keys
+          locator_type: id
+          locator_value: userid
+          description: send username
+          input_field:
+            type: command_line
+            field_name: username
+        - step_no: 3
+          action_type: click
+          locator_type: id
+          locator_value: password
+          description: CLick on  password
+          input_field: null
+        - step_no: 4
+          action_type: send_keys
+          locator_type: id
+          locator_value: password
+          description: Send password
+          input_field:
+            type: command_line
+            field_name: password
+        - step_no: 5
+          action_type: click
+          locator_type: id
+          locator_value: btnActive
+          description: Click on Sign In Button
+          input_field: null
+        - step_no: 6
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 7
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmil3u'
+          description: Click on Setting and Action
+          input_field: {}
+        - step_no: 6
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 8
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmi4'
+          description: Click on Setup and Maintenance
+          input_field: {}
+        - step_no: 9
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 10
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+          description: Click on Task Button
+          input_field: {}
+        - step_no: 11
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 12
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+          description: Click on Search Box
+          input_field: {}
+        - step_no: 13
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 14
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:it1::content'
+          description: Send the Config Name
+          input_field:
+            type: fixed
+            value: Manage Administrator Profile Values
+        - step_no: 15
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 16
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 17
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 18
+          action_type: click
+          locator_type: xpath
+          locator_value: '//*[contains(text(), ''Manage Administrator Profile Values'')]'
+          description: Click on Manage Administrator Profile Values
+          input_field: {}
+        - step_no: 19
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 20
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:qryId1:value10::content'
+          description: Click on Profile Display Name
+          input_field: {}
+        - step_no: 21
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 22
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:qryId1:value10::content'
+          description: Send the Profile Value
+          input_field:
+            type: fixed
+            value: Banner
+        - step_no: 23
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 24
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:qryId1::search'
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 25
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 26
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:it3::content
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 27
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 28
+          action_type: retrieve_value
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:it3::content
+          description: Retrieve the value from the input box for column_name1
+          output_field: old_value_column1
+        - step_no: 29
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 30
+          action_type: send_keys
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:it3::content
+          description: Send the Profile Value
+          input_field:
+            type: input_file
+            field_name: Value1
+        - step_no: 31
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 32
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:APscl'
+          description: Click on Save and Close Icon
+          input_field: {}
+        - step_no: 31
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+  '103':
+    task:
+      actions:
+        - step_no: 1
+          action_type: click
+          locator_type: id
+          locator_value: userid
+          description: Click on username
+          input_field: null
+        - step_no: 2
+          action_type: send_keys
+          locator_type: id
+          locator_value: userid
+          description: send username
+          input_field:
+            type: command_line
+            field_name: username
+        - step_no: 3
+          action_type: click
+          locator_type: id
+          locator_value: password
+          description: CLick on  password
+          input_field: null
+        - step_no: 4
+          action_type: send_keys
+          locator_type: id
+          locator_value: password
+          description: Send password
+          input_field:
+            type: command_line
+            field_name: password
+        - step_no: 5
+          action_type: click
+          locator_type: id
+          locator_value: btnActive
+          description: Click on Sign In Button
+          input_field: null
+        - step_no: 6
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 7
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UISmmLink'
+          description: Click on Navigator Button
+          input_field: null
+        - step_no: 8
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+          input_field: {}
+        - step_no: 9
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UISnvr:0:nvgpgl2_groupNode_tools'
+          description: Click on Tool Button
+          input_field: null
+        - step_no: 10
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 11
+          action_type: click
+          locator_type: xpath
+          locator_value: '//span[contains(text(), ''Scheduled Processes'')]'
+          description: Click on Schedule Process Button
+          input_field: null
+        - step_no: 12
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 13
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:panel:scheduleProcess'
+          description: Click on  New Scheduled Process Button
+          input_field: null
+        - step_no: 14
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 15
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Click on  Click on Search Scheduled Process
+          input_field: null
+        - step_no: 15
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 16
+          action_type: send_keys
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Send the Schedule Process Value
+          input_field:
+            type: fixed
+            value: Retrieve Latest LDAP Changes
+        - step_no: 17
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 18
+          action_type: send_keys_enter
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Click Enter to Select that process
+          input_field: {}
+        - step_no: 19
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 20
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:snpokbtnid'
+          description: Click on  Ok to enter Process
+          input_field: null
+        - step_no: 21
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 22
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            _FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:submitButton
+          description: Click on  Submit the Process
+          input_field: null
+        - step_no: 23
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 24
+          action_type: retrieve_value
+          locator_type: XPATH
+          locator_value: >-
+            //*[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:confirmationPopup:pt_ol1']//label
+          description: Retrieve the value for the Process ID for it
+          output_field: old_value_column1
+        - step_no: 25
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 26
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            _FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:confirmationPopup:confirmSubmitDialog::ok
+          description: Click on  OK
+          input_field: null
+        - step_no: 27
+          action_type: wait
+          duration: 15
+          description: Wait for the page
+          input_field: {}
+        - step_no: 28
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:panel:scheduleProcess'
+          description: Click on  New Scheduled Process Button
+          input_field: null
+        - step_no: 29
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 30
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Click on  Click on Search Scheduled Process
+          input_field: null
+        - step_no: 31
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 32
+          action_type: send_keys
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Send the Schedule Process Value
+          input_field:
+            type: fixed
+            value: Send Pending LDAP Requests
+        - step_no: 33
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 34
+          action_type: send_keys_enter
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Click Enter to Select that process
+          input_field: {}
+        - step_no: 35
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 36
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:snpokbtnid'
+          description: Click on  Ok to enter Process
+          input_field: null
+        - step_no: 37
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 38
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            _FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:submitButton
+          description: Click on  Submit the Process
+          input_field: null
+        - step_no: 39
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 40
+          action_type: retrieve_value
+          locator_type: XPATH
+          locator_value: >-
+            //*[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:confirmationPopup:pt_ol1']//label
+          description: Retrieve the value for the Process ID for it
+          output_field: old_value_column2
+        - step_no: 41
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 42
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            _FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:confirmationPopup:confirmSubmitDialog::ok
+          description: Click on  OK
+          input_field: null
+        - step_no: 43
+          action_type: wait
+          duration: 15
+          description: Wait for the page
+          input_field: {}
+        - step_no: 43
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:panel:scheduleProcess'
+          description: Click on  New Scheduled Process Button
+          input_field: null
+        - step_no: 44
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 45
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Click on  Click on Search Scheduled Process
+          input_field: null
+        - step_no: 46
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 47
+          action_type: send_keys
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Send the Schedule Process Value
+          input_field:
+            type: fixed
+            value: Import User and Role Application Security Data
+        - step_no: 48
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 49
+          action_type: send_keys_enter
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Click Enter to Select that process
+          input_field: {}
+        - step_no: 50
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 51
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:snpokbtnid'
+          description: Click on  Ok to enter Process
+          input_field: null
+        - step_no: 52
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 53
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            _FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:submitButton
+          description: Click on  Submit the Process
+          input_field: null
+        - step_no: 54
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 55
+          action_type: retrieve_value
+          locator_type: XPATH
+          locator_value: >-
+            //*[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:confirmationPopup:pt_ol1']//label
+          description: Retrieve the value for the Process ID for it
+          output_field: old_value_column3
+        - step_no: 56
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 57
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            _FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:confirmationPopup:pt_ol1
+          description: Click on  OK
+          input_field: null
+        - step_no: 58
+          action_type: wait
+          duration: 15
+          description: Wait for the page
+          input_field: {}
+  '104':
+    task:
+      actions:
+        - step_no: 1
+          action_type: click
+          locator_type: id
+          locator_value: userid
+          description: Click on username
+          input_field: null
+        - step_no: 2
+          action_type: send_keys
+          locator_type: id
+          locator_value: userid
+          description: send username
+          input_field:
+            type: command_line
+            field_name: username
+        - step_no: 3
+          action_type: click
+          locator_type: id
+          locator_value: password
+          description: CLick on  password
+          input_field: null
+        - step_no: 4
+          action_type: send_keys
+          locator_type: id
+          locator_value: password
+          description: Send password
+          input_field:
+            type: command_line
+            field_name: password
+        - step_no: 5
+          action_type: click
+          locator_type: id
+          locator_value: btnActive
+          description: Click on Sign In Button
+          input_field: null
+        - step_no: 6
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 7
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmil3u'
+          description: Click on Setting and Action
+          input_field: {}
+        - step_no: 8
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 9
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmi4'
+          description: Click on Setup and Maintenance
+          input_field: {}
+        - step_no: 10
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 11
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+          description: Click on Task Button
+          input_field: {}
+        - step_no: 12
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 13
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+          description: Click on Search Box
+          input_field: {}
+        - step_no: 14
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 15
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:it1::content'
+          description: Send the Config Name
+          input_field:
+            type: fixed
+            value: Manage Disbursement System Options
+        - step_no: 16
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 17
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 18
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 19
+          action_type: click
+          locator_type: xpath
+          locator_value: '//*[contains(text(), ''Manage Disbursement System Options'')]'
+          description: Click on Manage Disbursement System Options
+          input_field: {}
+        - step_no: 20
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 21
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:payerPanel1:it1::content'
+          description: Click on Separate Remittance Advice from Email
+          input_field: {}
+        - step_no: 22
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 23
+          action_type: retrieve_value
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:payerPanel1:it1::content'
+          description: Retrieve the value from the input box for column_name1
+          output_field: old_value_column1
+        - step_no: 24
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 25
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:payerPanel1:it1::content'
+          description: Send Column 1 associated value
+          input_field:
+            type: input_file
+            field_name: Value1
+        - step_no: 26
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 27
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:payerPanel1:it2::content'
+          description: Click on Separate Remittance Advice Subject
+          input_field: {}
+        - step_no: 28
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 29
+          action_type: retrieve_value
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:payerPanel1:it2::content'
+          description: Retrieve the value from the input box for column_name2
+          output_field: old_value_column2
+        - step_no: 30
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 31
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:payerPanel1:it2::content'
+          description: Send Column 2 associated value
+          input_field:
+            type: input_file
+            field_name: Value2
+        - step_no: 32
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 33
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:payerPanel1:commandToolbarButton1'
+          description: Click on Save and Close
+          input_field: { }
+        - step_no: 34
+          action_type: wait
+          duration: 15
+          description: Wait for the page
+          input_field: { }
+  '105':
+    task:
+      actions:
+        - step_no: 1
+          action_type: click
+          locator_type: id
+          locator_value: userid
+          description: Click on username
+          input_field: null
+        - step_no: 2
+          action_type: send_keys
+          locator_type: id
+          locator_value: userid
+          description: send username
+          input_field:
+            type: command_line
+            field_name: username
+        - step_no: 3
+          action_type: click
+          locator_type: id
+          locator_value: password
+          description: CLick on  password
+          input_field: null
+        - step_no: 4
+          action_type: send_keys
+          locator_type: id
+          locator_value: password
+          description: Send password
+          input_field:
+            type: command_line
+            field_name: password
+        - step_no: 5
+          action_type: click
+          locator_type: id
+          locator_value: btnActive
+          description: Click on Sign In Button
+          input_field: null
+        - step_no: 6
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 7
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmil3u'
+          description: Click on Setting and Action
+          input_field: {}
+        - step_no: 6
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 8
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmi4'
+          description: Click on Setup and Maintenance
+          input_field: {}
+        - step_no: 9
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 10
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+          description: Click on Task Button
+          input_field: {}
+        - step_no: 11
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 12
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+          description: Click on Search Box
+          input_field: {}
+        - step_no: 13
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 14
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:it1::content'
+          description: Send the Config Name
+          input_field:
+            type: fixed
+            value: Manage Administrator Profile Values
+        - step_no: 15
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 16
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 17
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 18
+          action_type: click
+          locator_type: xpath
+          locator_value: '//*[contains(text(), ''Manage Administrator Profile Values'')]'
+          description: Click on Manage Administrator Profile Values
+          input_field: {}
+        - step_no: 19
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 20
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:qryId1:value00::content'
+          description: Click on Profile Option Code
+          input_field: {}
+        - step_no: 21
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 22
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:qryId1:value00::content'
+          description: Send the Profile Option Code
+          input_field:
+            type: fixed
+            value: PO_CONTROL_SUPPLIER_COMMUNICATION
+        - step_no: 23
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 24
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:qryId1::search'
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 25
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 26
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:soc2::content
+          description: Click on Drop Down
+          input_field: {}
+        - step_no: 27
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 28
+          action_type: retrieve_value
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:soc2::content
+          description: Retrieve the value from the input box for column_name1
+          output_field: old_value_column1
+        - step_no: 29
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 30
+          action_type: select_dropdown
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:soc2::content
+          description: Select Drop Down as Disable
+          dropdown_value: "Disable"
+          input_field: {}
+        - step_no: 31
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 32
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:APscl'
+          description: Click on Save and Close Icon
+          input_field: {}
+        - step_no: 31
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+  '106':
+    task:
+      actions:
+        - step_no: 1
+          action_type: click
+          locator_type: id
+          locator_value: userid
+          description: Click on username
+          input_field: null
+        - step_no: 2
+          action_type: send_keys
+          locator_type: id
+          locator_value: userid
+          description: send username
+          input_field:
+            type: command_line
+            field_name: username
+        - step_no: 3
+          action_type: click
+          locator_type: id
+          locator_value: password
+          description: CLick on  password
+          input_field: null
+        - step_no: 4
+          action_type: send_keys
+          locator_type: id
+          locator_value: password
+          description: Send password
+          input_field:
+            type: command_line
+            field_name: password
+        - step_no: 5
+          action_type: click
+          locator_type: id
+          locator_value: btnActive
+          description: Click on Sign In Button
+          input_field: null
+        - step_no: 6
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 7
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UISmmLink'
+          description: Click on Navigator Button
+          input_field: null
+        - step_no: 8
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+          input_field: {}
+        - step_no: 9
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UISnvr:0:nvgpgl2_groupNode_tools'
+          description: Click on Tool Button
+          input_field: null
+        - step_no: 10
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 11
+          action_type: click
+          locator_type: xpath
+          locator_value: '//span[contains(text(), ''Scheduled Processes'')]'
+          description: Click on Schedule Process Button
+          input_field: null
+        - step_no: 12
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 13
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:panel:scheduleProcess'
+          description: Click on  New Scheduled Process Button
+          input_field: null
+        - step_no: 14
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 15
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Click on  Click on Search Scheduled Process
+          input_field: null
+        - step_no: 15
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 16
+          action_type: send_keys
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Send the Schedule Process Value
+          input_field:
+            type: fixed
+            value: Create General Ledger Balances Cube
+        - step_no: 17
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 18
+          action_type: send_keys_enter
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:selectOneChoice2::content'
+          description: Click Enter to Select that process
+          input_field: {}
+        - step_no: 19
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 20
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:snpokbtnid'
+          description: Click on  Ok to enter Process
+          input_field: null
+        - step_no: 21
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: {}
+        - step_no: 22
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:basicReqBody:paramDynForm_Attribute2_ATTRIBUTE2::content'
+          description: Click on  Chart of Accounts Value Text Box
+          input_field: null
+        - step_no: 23
+          action_type: wait
+          duration: 4
+          description: Wait for the page
+          input_field: { }
+        - step_no: 24
+          action_type: send_keys
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:basicReqBody:paramDynForm_Attribute2_ATTRIBUTE2::content'
+          description: Send the Chart of Accounts Value
+          input_field:
+            type: input_file
+            field_name: Value1
+        - step_no: 25
+          action_type: wait
+          duration: 4
+          description: Wait for the page
+          input_field: { }
+        - step_no: 26
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:basicReqBody:paramDynForm_Attribute8_ATTRIBUTE8::content'
+          description: Click on  Accounting Calender Text Box
+          input_field: null
+        - step_no: 27
+          action_type: wait
+          duration: 4
+          description: Wait for the page
+          input_field: { }
+        - step_no: 28
+          action_type: send_keys
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:basicReqBody:paramDynForm_Attribute8_ATTRIBUTE8::content'
+          description: Send the Accounting Calender Text Box
+          input_field:
+            type: input_file
+            field_name: Value2
+        - step_no: 29
+          action_type: wait
+          duration: 4
+          description: Wait for the page
+          input_field: { }
+        - step_no: 30
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:basicReqBody:paramDynForm_Attribute9_ATTRIBUTE9::content'
+          description: Click on  Starting Period Text Box
+          input_field: null
+        - step_no: 31
+          action_type: wait
+          duration: 4
+          description: Wait for the page
+          input_field: { }
+        - step_no: 32
+          action_type: send_keys
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:basicReqBody:paramDynForm_Attribute9_ATTRIBUTE9::content'
+          description: Send the Starting Period Text Box
+          input_field:
+            type: input_file
+            field_name: Value3
+        - step_no: 33
+          action_type: wait
+          duration: 4
+          description: Wait for the page
+          input_field: { }
+        - step_no: 34
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:requestBtns:submitButton'
+          description: Click on  Submit the Process
+          input_field: null
+        - step_no: 35
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: { }
+        - step_no: 36
+          action_type: retrieve_value
+          locator_type: XPATH
+          locator_value: >-
+            //*[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:0:r1:requestBtns:confirmationPopup:pt_ol1']//label
+          description: Retrieve the value for the Process ID for it
+          output_field: old_value_column1
+        - step_no: 37
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: { }
+        - step_no: 38
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsr1:0:pt1:r1:0:r1:requestBtns:confirmationPopup:confirmSubmitDialog::ok'
+          description: Click on  OK
+          input_field: null
+        - step_no: 39
+          action_type: wait
+          duration: 15
+          description: Wait for the page
+          input_field: { }
