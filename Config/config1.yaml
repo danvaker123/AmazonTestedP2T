@@ -2308,6 +2308,148 @@ tasks:
           action_type: wait
           duration: 8
           description: Wait for the page
+  '111':
+    task:
+      actions:
+        - step_no: 1
+          action_type: click
+          locator_type: id
+          locator_value: userid
+          description: Click on username
+          input_field: null
+        - step_no: 2
+          action_type: send_keys
+          locator_type: id
+          locator_value: userid
+          description: send username
+          input_field:
+            type: command_line
+            field_name: username
+        - step_no: 3
+          action_type: click
+          locator_type: id
+          locator_value: password
+          description: CLick on  password
+          input_field: null
+        - step_no: 4
+          action_type: send_keys
+          locator_type: id
+          locator_value: password
+          description: Send password
+          input_field:
+            type: command_line
+            field_name: password
+        - step_no: 5
+          action_type: click
+          locator_type: id
+          locator_value: btnActive
+          description: Click on Sign In Button
+          input_field: null
+        - step_no: 6
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 7
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmil3u'
+          description: Click on Setting and Action
+          input_field: {}
+        - step_no: 6
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 8
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmi4'
+          description: Click on Setup and Maintenance
+          input_field: {}
+        - step_no: 9
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 10
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+          description: Click on Task Button
+          input_field: {}
+        - step_no: 11
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 12
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+          description: Click on Search Box
+          input_field: {}
+        - step_no: 13
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 14
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:it1::content'
+          description: Send the Config Name
+          input_field:
+            type: fixed
+            value: Manage Payment Process Profile
+        - step_no: 15
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 16
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 17
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 18
+          action_type: click
+          locator_type: xpath
+          locator_value: '//*[contains(text(), ''Manage Payment Process Profile'')]'
+          description: Click on Manage Payment Process Profile
+          input_field: {}
+        - step_no: 19
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 20
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content'
+          description: Click on Name Textbox
+          input_field: { }
+        - step_no: 21
+          action_type: send_keys
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content
+          description: Send Config Name
+          input_field:
+            type: input_file
+            field_name: Configuration Name
+        - step_no: 23
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+
 
 
 

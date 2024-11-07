@@ -1,28 +1,8 @@
-2024-11-07 15:14:30,603 | INFO | Automation process started.
-2024-11-07 15:14:45,922 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com/
-2024-11-07 15:14:50,972 | INFO | Clicked element with locator 'userid'
-2024-11-07 15:14:51,029 | INFO | Sent keys to element with locator 'userid': casey.brown
-2024-11-07 15:14:51,076 | INFO | Clicked element with locator 'password'
-2024-11-07 15:14:51,126 | INFO | Sent keys to element with locator 'password': Ks?6BK%8
-2024-11-07 15:15:06,959 | INFO | Clicked element with locator 'btnActive'
-2024-11-07 15:15:06,959 | INFO | Waiting for 10 seconds...
-2024-11-07 15:15:17,011 | INFO | Clicked element with locator 'pt1:_UISmmLink'
-2024-11-07 15:15:17,011 | INFO | Waiting for 8 seconds...
-2024-11-07 15:15:25,072 | INFO | Clicked element with locator 'pt1:_UISnvr:0:nvgpgl2_groupNode_tools'
-2024-11-07 15:15:25,072 | INFO | Waiting for 8 seconds...
-2024-11-07 15:15:33,125 | INFO | Clicked element with locator 'pt1:_UISnvr:0:nv_ASE_FUSE_SECURITY_CONSOLE'
-2024-11-07 15:15:33,125 | INFO | Waiting for 8 seconds...
-2024-11-07 15:15:41,182 | INFO | Clicked element with locator '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsdiASE_FUSE_UC_WORKAREA::text'
-2024-11-07 15:15:41,182 | INFO | Waiting for 8 seconds...
-2024-11-07 15:15:49,233 | INFO | Clicked element with locator '//div[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTr4:1:sp1:SPpgl23']//*[contains(text(), 'DEFAULT')]'
-2024-11-07 15:15:49,234 | INFO | Waiting for 8 seconds...
-2024-11-07 15:15:57,285 | INFO | Clicked element with locator '_FOpt1:_FOr1:0:_FONSr2:0:MAnt2:1:ucSp1:ucNotifications::text'
-2024-11-07 15:15:57,286 | INFO | Waiting for 8 seconds...
-2024-11-07 15:16:05,338 | INFO | Clicked element with locator '_FOpt1:_FOr1:0:_FONSr2:0:MAnt2:1:ucSp1:cb6'
-2024-11-07 15:16:05,338 | INFO | Waiting for 8 seconds...
-2024-11-07 15:16:13,351 | INFO | Checkbox with locator '_FOpt1:_FOr1:0:_FONSr2:0:MAnt2:2:sp1:sbc211::content' is already unchecked. No action needed.
-2024-11-07 15:16:13,351 | INFO | Waiting for 8 seconds...
-2024-11-07 15:16:21,402 | INFO | Clicked element with locator '_FOpt1:_FOr1:0:_FONSr2:0:MAnt2:2:sp1:cb2'
-2024-11-07 15:16:21,402 | INFO | Waiting for 8 seconds...
-2024-11-07 15:16:29,404 | INFO | Task 'Security Console' with Subtask 'DEFAULT' executed successfully.
-2024-11-07 15:16:31,747 | INFO | Closed the final browser.
+2024-11-07 20:40:16,235 | INFO | Automation process started.
+2024-11-07 20:40:26,932 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com/
+2024-11-07 20:40:31,979 | INFO | Clicked element with locator 'userid'
+2024-11-07 20:40:32,049 | INFO | Sent keys to element with locator 'userid': casey.brown
+2024-11-07 20:40:32,100 | INFO | Clicked element with locator 'password'
+2024-11-07 20:40:32,159 | INFO | Sent keys to element with locator 'password': Ks?6BK%8
+2024-11-07 20:40:33,095 | INFO | Clicked element with locator 'btnActive'
+2024-11-07 20:40:33,096 | INFO | Waiting for 10 seconds...
