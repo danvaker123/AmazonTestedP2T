@@ -2449,12 +2449,323 @@ tasks:
           duration: 5
           description: Wait for the page
           input_field: { }
-
-
-
-
-
-
-
-
+        - step_no: 24
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1::search'
+          description: Click on Search Icon
+          input_field: { }
+        - step_no: 25
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+        - step_no: 26
+          action_type: click
+          locator_type: xpath
+          locator_value: >-
+            //div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:AT2:_ATp:t1::db']//*[contains(text(),
+            '{configuration_name}')]
+          description: Click on Searched Name
+        - step_no: 27
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: { }
+        - step_no: 28
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:showDetailItem6::disAcr
+          description: Click on Reporting Tab Config
+          input_field: { }
+        - step_no: 29
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: { }
+        - step_no: 30
+          action_type: toggle_checkbox
+          locator_type: id
+          locator_value: "pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox24::content"
+          description: "Uncheck the checkbox for disabling"
+          desired_state: "uncheck"  # or "uncheck"
+        - step_no: 29
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: { }
+        - step_no: 31
+          action_type: toggle_checkbox
+          locator_type: id
+          locator_value: "pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox25::content"
+          description: "Uncheck the checkbox for disabling"
+          desired_state: "uncheck"  # or "uncheck"
+        - step_no: 29
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: { }
+        - step_no: 30
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:ctb3'
+          description: Click on Save Button
+        - step_no: 31
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: { }
+        - step_no: 32
+          action_type: click
+          locator_type: id
+          locator_value: 'd1::msgDlg::cancel'
+          description: Click on OK Button
+        - step_no: 33
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: { }
+  '112':
+    task:
+      actions:
+        - step_no: 1
+          action_type: click
+          locator_type: id
+          locator_value: userid
+          description: Click on username
+          input_field: null
+        - step_no: 2
+          action_type: send_keys
+          locator_type: id
+          locator_value: userid
+          description: send username
+          input_field:
+            type: command_line
+            field_name: username
+        - step_no: 3
+          action_type: click
+          locator_type: id
+          locator_value: password
+          description: CLick on  password
+          input_field: null
+        - step_no: 4
+          action_type: send_keys
+          locator_type: id
+          locator_value: password
+          description: Send password
+          input_field:
+            type: command_line
+            field_name: password
+        - step_no: 5
+          action_type: click
+          locator_type: id
+          locator_value: btnActive
+          description: Click on Sign In Button
+          input_field: null
+        - step_no: 6
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 7
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmil3u'
+          description: Click on Setting and Action
+          input_field: {}
+        - step_no: 6
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 8
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UIScmi4'
+          description: Click on Setup and Maintenance
+          input_field: {}
+        - step_no: 9
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 10
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+          description: Click on Task Button
+          input_field: {}
+        - step_no: 11
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 12
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+          description: Click on Search Box
+          input_field: {}
+        - step_no: 13
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 14
+          action_type: send_keys
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:it1::content'
+          description: Send the Config Name
+          input_field:
+            type: fixed
+            value: Manage Receivables System Options
+        - step_no: 15
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 16
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+          description: Click on Search Icon
+          input_field: {}
+        - step_no: 17
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: {}
+        - step_no: 18
+          action_type: click
+          locator_type: xpath
+          locator_value: '//*[contains(text(), ''Manage Receivables System Options'')]'
+          description: Click on Manage Receivables System Options
+          input_field: {}
+        - step_no: 19
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 20
+          action_type: click
+          locator_type: id
+          locator_value: pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:AP1:qryId1:criterionValue0::content
+          description: Click on Click the BU Textbox
+          input_field: { }
+        - step_no: 21
+          action_type: send_keys
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:AP1:qryId1:criterionValue0::content
+          description: Send Config Name
+          input_field:
+            type: input_file
+            field_name: Configuration Name
+        - step_no: 23
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+        - step_no: 24
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:AP1:qryId1::search_icon'
+          description: Click on Search Icon
+          input_field: { }
+        - step_no: 25
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+        - step_no: 26
+          action_type: click
+          locator_type: xpath
+          locator_value: >-
+            //div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(),
+            '{configuration_name}')]
+          description: Click on Searched Name
+        - step_no: 27
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: { }
+        - step_no: 28
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:1:ap1:showDetailItem1::disAcr
+          description: Click on Billing and Reveneue Tab
+          input_field: { }
+        - step_no: 29
+          action_type: wait
+          duration: 7
+          description: Wait for the page
+          input_field: { }
+        - step_no: 30
+          description: "Clear the Transaction Delivery Using Email From Name text box"
+          action_type: "clear_text_box"
+          locator_type: id
+          locator_value: pt1:r1:0:rt:1:r2:0:dynamicRegion1:1:ap1:it1::content
+        - step_no: 31
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+        - step_no: 32
+          description: "Clear the Transaction Delivery Using Email From  Email text box"
+          action_type: clear_text_box
+          locator_type: id
+          locator_value: pt1:r1:0:rt:1:r2:0:dynamicRegion1:1:ap1:it5::content
+        - step_no: 33
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+        - step_no: 34
+          description: "Clear the Transaction Delivery Using Email Reply-to Email text box"
+          action_type: clear_text_box
+          locator_type: id
+          locator_value: pt1:r1:0:rt:1:r2:0:dynamicRegion1:1:ap1:it6::content
+        - step_no: 35
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+        - step_no: 36
+          description: "Statement Delivery Using Email From Name text box"
+          action_type: "clear_text_box"
+          locator_type: id
+          locator_value: pt1:r1:0:rt:1:r2:0:dynamicRegion1:1:ap1:it12::content
+        - step_no: 37
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+        - step_no: 38
+          description: "Statement Delivery Using Email From  Email text box"
+          action_type: clear_text_box
+          locator_type: id
+          locator_value: pt1:r1:0:rt:1:r2:0:dynamicRegion1:1:ap1:it13::content
+        - step_no: 39
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+        - step_no: 40
+          description: "Statement Delivery Using Email Reply-to Email text box"
+          action_type: clear_text_box
+          locator_type: id
+          locator_value: pt1:r1:0:rt:1:r2:0:dynamicRegion1:1:ap1:it9::content
+        - step_no: 41
+          action_type: wait
+          duration: 5
+          description: Wait for the page
+          input_field: { }
+        - step_no: 42
+          action_type: click
+          locator_type: id
+          locator_value: >-
+            pt1:r1:0:rt:1:r2:0:dynamicRegion1:1:ap1:commandButton2
+          description: Click on Save And Close Tab
 

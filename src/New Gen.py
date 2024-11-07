@@ -139,6 +139,22 @@ def wait_for_element(driver, locator_type, locator_value):
     return WebDriverWait(driver, 10).until(EC.presence_of_element_located((locator_type, locator_value)))
 
 
+def clear_text_box(driver, locator_type, locator_value):
+    try:
+        # Locate the element using the provided locator_type and locator_value
+        element = wait_for_element(driver, locator_type, locator_value)
+
+        if element is not None:
+            # Clear the text box
+            element.clear()
+            logging.info("Cleared text box with locator '%s'", locator_value)
+        else:
+            logging.warning("Element not found for clearing text box with locator '%s'. Action skipped.", locator_value)
+
+    except Exception as e:
+        logging.error("An error occurred while clearing text box with locator '%s': %s", locator_value, e)
+
+
 def delete_printer_records(driver):
     # Find all rows in the table
     try:
@@ -293,7 +309,7 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
     # Wait for the element to be present if action requires it
     element = None
     if action['action_type'] in ['send_keys', 'click', 'find', 'retrieve_value', 'send_keys_enter', 'select_dropdown',
-                                 'switch_to_frame', 'toggle_checkbox']:
+                                 'switch_to_frame', 'toggle_checkbox', 'clear_text_box']:
         locator_type = get_by_type(action['locator_type'])
         try:
             element = wait_for_element(driver, locator_type, locator_value)
@@ -421,6 +437,14 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
                 logging.warning(
                     "Checkbox element not found for toggle_checkbox action with locator '%s'. Action skipped.",
                     locator_value)
+
+        elif action['action_type'] == 'clear_text_box':
+            if element is not None:
+                element.clear()
+                logging.info("Cleared text box with locator '%s'", locator_value)
+            else:
+                logging.warning("Element not found for clear_text_box action with locator '%s'. Action skipped.",
+                                locator_value)
 
         print(f"Executed step: {action['step_no']} , {action['description']}")
 
