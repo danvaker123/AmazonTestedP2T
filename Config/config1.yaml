@@ -457,13 +457,13 @@ tasks:
           duration: 10
           description: Wait for the page
           input_field: {}
-        - step_no: 26
-          action_type: click
-          locator_type: id
-          locator_value: >-
-            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:it3::content
-          description: Click on Search Icon
-          input_field: {}
+#        - step_no: 26
+#          action_type: click
+#          locator_type: id
+#          locator_value: >-
+#            pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:it3::content
+#          description: Click on Search Icon
+#          input_field: {}
         - step_no: 27
           action_type: wait
           duration: 7

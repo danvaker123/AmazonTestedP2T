@@ -456,7 +456,6 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
     current_subtask_id = None
     is_first_run = True
     output_list = []
-    output_dict = {}
 
     # Define the column order you want in the output Excel file
     column_order = ['Task', 'Action', 'Configuration', 'Updated_Column1', 'New_Data1', 'Old_Data1', 'Updated_Column2',
@@ -465,27 +464,29 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
 
     for data in task_data:
         subtask_id = str(data['Subtask ID'])
-        output_dict["Task"] = str(data['Task Name'])
-        output_dict["Action"] = 'Updating Configuration ' + str(data['Configuration Name']) + ' Updating Column ' + str(
-            data['Column Name1']) + ' , ' + str(data['Column Name2']) + ' , ' + str(data['Column Name3']) + ' , ' + str(
-            data['Column Name4'])
-        output_dict['Configuration'] = str(data['Configuration Name'])
-        output_dict['Updated_Column1'] = str(data['Column Name1'])
-        output_dict['New_Data1'] = str(data['Value1'])
-        output_dict['Updated_Column2'] = str(data['Column Name2'])
-        output_dict['New_Data2'] = str(data['Value2'])
-        output_dict['Updated_Column3'] = str(data['Column Name3'])
-        output_dict['New_Data3'] = str(data['Value3'])
-        output_dict['Updated_Column4'] = str(data['Column Name4'])
-        output_dict['New_Data4'] = str(data['Value4'])
 
-        # Ensure Old_Data columns are initialized as empty
-        output_dict['Old_Data1'] = ''
-        output_dict['Old_Data2'] = ''
-        output_dict['Old_Data3'] = ''
-        output_dict['Old_Data4'] = ''
-        output_dict['Result'] = ''
-        output_dict['Comment'] = ''
+        # Ensure output_dict is freshly initialized for each task
+        output_dict = {
+            "Task": str(data['Task Name']),
+            "Action": 'Updating Configuration ' + str(data['Configuration Name']) + ' Updating Column ' + str(
+                data['Column Name1']) + ' , ' + str(data['Column Name2']) + ' , ' + str(data['Column Name3']) + ' , ' + str(
+                data['Column Name4']),
+            'Configuration': str(data['Configuration Name']),
+            'Updated_Column1': str(data['Column Name1']),
+            'New_Data1': str(data['Value1']),
+            'Updated_Column2': str(data['Column Name2']),
+            'New_Data2': str(data['Value2']),
+            'Updated_Column3': str(data['Column Name3']),
+            'New_Data3': str(data['Value3']),
+            'Updated_Column4': str(data['Column Name4']),
+            'New_Data4': str(data['Value4']),
+            'Old_Data1': '',  # Initialize Old_Data columns as empty
+            'Old_Data2': '',
+            'Old_Data3': '',
+            'Old_Data4': '',
+            'Result': '',
+            'Comment': ''
+        }
 
         # Check if the subtask ID is present in the YAML config
         if subtask_id not in task_config['tasks']:
@@ -520,6 +521,7 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
             if field_name in task_output_data:
                 output_dict[f'Old_Data{i}'] = task_output_data[field_name]
 
+        # Append the updated output_dict to the output_list for this subtask
         output_list.append(output_dict)
 
     # After all subtasks are processed, close the browser
@@ -573,9 +575,6 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
 
     # Save the formatted Excel file
     wb.save(output_file_path)
-    print('Test I Am here')
-    print(output_data)
-
 
 if __name__ == "__main__":
     main('../Input/input_data.xlsx', '../Input/output_data.xlsx', 'Input Details', '../Config/config1.yaml')

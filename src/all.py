@@ -2,15 +2,16 @@ import json
 import logging
 import os
 import time
-import openpyxl
+
+import pandas as pd
 import yaml
 from selenium import webdriver
+from selenium.common import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
-
+from selenium.webdriver.support.ui import WebDriverWait
 
 # Set up logging configuration
 logging.basicConfig(filename='automation_log.txt', level=logging.INFO,
@@ -138,6 +139,54 @@ def wait_for_element(driver, locator_type, locator_value):
     return WebDriverWait(driver, 10).until(EC.presence_of_element_located((locator_type, locator_value)))
 
 
+def delete_printer_records(driver):
+    # Find all rows in the table
+    try:
+        check_table_record = driver.find_elements(By.CSS_SELECTOR, '#ServersTable > table.x1o > tbody > tr')
+        length = len(check_table_record)
+        logging.info(f"Total records found: {length}")
+    except NoSuchElementException as e:
+        logging.error("Unable to locate table records.", exc_info=True)
+        return
+
+    count = 0
+    for i in range(1, length - 1):
+        try:
+            # Attempt to click on the delete link in the 5th column
+            clk = WebDriverWait(driver, 120).until(EC.presence_of_element_located(
+                (By.CSS_SELECTOR, '#ServersTable > table > tbody > tr > td:nth-child(5) > a'))).click()
+            logging.info(f"Record {i}: Clicked on the delete link in the 5th column.")
+            time.sleep(5)
+        except (TimeoutException, ElementClickInterceptedException):
+            logging.warning(
+                f"Record {i}: Failed to click on the delete link in the 5th column, attempting the 4th column.")
+            try:
+                # Attempt to click on the delete link in the 4th column if 5th column click fails
+                clk = WebDriverWait(driver, 120).until(EC.presence_of_element_located(
+                    (By.CSS_SELECTOR, '#ServersTable > table > tbody > tr > td:nth-child(4) > a'))).click()
+                logging.info(f"Record {i}: Clicked on the delete link in the 4th column.")
+                time.sleep(5)
+            except (TimeoutException, ElementClickInterceptedException):
+                logging.error(f"Record {i}: Failed to click on the delete link in both 4th and 5th columns.",
+                              exc_info=True)
+                continue
+
+        # Confirm the deletion by clicking "Yes" in the delete confirmation form
+        try:
+            close_yes = WebDriverWait(driver, 60).until(EC.element_to_be_clickable(
+                (By.CSS_SELECTOR, '#deleteForm > table > tbody > tr > td > button:nth-child(3)'))).click()
+            logging.info(f"Record {i}: Confirmed deletion by clicking 'Yes'.")
+            time.sleep(10)
+        except (TimeoutException, ElementClickInterceptedException):
+            logging.error(f"Record {i}: Failed to confirm deletion by clicking 'Yes'.", exc_info=True)
+            continue
+
+        count += 1
+        logging.info(f"Deleted record {count}/{length - 1}.")
+
+    logging.info(f"Total records deleted: {count}/{length - 1}.")
+
+
 def create_context(task_data):
     """
     Create a context dictionary from task data for template replacement.
@@ -152,34 +201,38 @@ def create_context(task_data):
 
 
 subtask_occurrence_tracker = {}
+
+
 def perform_task(driver, task_config, task_data, username, password, url, subtask_id, first_run):
     # If subtask has been encountered before, start from step 20, otherwise start from step 1
     starting_step = 1 if subtask_occurrence_tracker[subtask_id] == 1 else 20
+    output_data = {}
 
     try:
-        # Navigate to the URL only on the first run of the subtask
         if first_run:
             driver.get(url)
             logging.info("Opened URL: %s", url)
-            time.sleep(5)  # Wait for the page to load
+            time.sleep(5)
 
-        # Execute steps based on the current occurrence of the subtask
         for action in task_config['task']['actions']:
             step_no = action['step_no']
 
-            # Skip steps if they are less than the starting step (e.g., start from step 20 for subsequent executions)
             if step_no < starting_step:
                 logging.info(f"Skipping step {step_no} for subtask {subtask_id}. Already executed.")
                 continue
 
-            # Perform the action (send_keys, click, etc.)
-            perform_action(driver, action, task_data, username, password)
+            result = perform_action(driver, action, task_data, username, password, output_data)
 
-        logging.info("Task %s executed successfully.", task_data['Task Name'])
+            if result and action['action_type'] == 'retrieve_value':
+                output_data.update(result)
+
+        logging.info("Task '%s' with Subtask '%s' executed successfully.", task_data['Task Name'],
+                     task_data['Configuration Name'])
 
     except Exception as e:
         logging.error("Error occurred during task execution: %s", e)
 
+    return output_data
 
 
 def perform_action(driver, action, task_data, username=None, password=None, url=None, output_data=None):
@@ -200,17 +253,18 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
     # Get the locator value
     locator_value = action.get('locator_value')
 
-    # Check if locator_value is None
-    if locator_value is None:
+    # Check if locator_value is None for actions that require it
+    if action['action_type'] not in ['switch_to_new_tab', 'wait', 'delete_printer_records'] and locator_value is None:
         logging.error("Locator value is None for action: %s", action)
         return output_data  # Skip the action if the locator is None
 
     # Replace placeholders in locator_value safely
-    try:
-        locator_value = locator_value.format(**context)
-    except KeyError as e:
-        logging.error("Missing key in context for formatting locator_value: %s", e)
-        return output_data  # Skip the action if key is missing
+    if locator_value is not None:
+        try:
+            locator_value = locator_value.format(**context)
+        except KeyError as e:
+            logging.error("Missing key in context for formatting locator_value: %s", e)
+            return output_data  # Skip the action if key is missing
 
     # Initialize input_value
     input_value = ""
@@ -238,7 +292,8 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
 
     # Wait for the element to be present if action requires it
     element = None
-    if action['action_type'] in ['send_keys', 'click', 'find', 'retrieve_value', 'send_keys_enter', 'select_dropdown']:
+    if action['action_type'] in ['send_keys', 'click', 'find', 'retrieve_value', 'send_keys_enter', 'select_dropdown',
+                                 'switch_to_frame', 'toggle_checkbox']:
         locator_type = get_by_type(action['locator_type'])
         try:
             element = wait_for_element(driver, locator_type, locator_value)
@@ -260,9 +315,9 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
         elif action['action_type'] == 'send_keys_enter':
             if element is not None:
                 element.send_keys(Keys.ENTER)
-                logging.info("Sent keys to element with locator '%s': %s", locator_value, input_value)
+                logging.info("Sent ENTER to element with locator '%s'", locator_value)
             else:
-                logging.warning("Element not found for send_keys action with locator '%s'. Action skipped.",
+                logging.warning("Element not found for send_keys_enter action with locator '%s'. Action skipped.",
                                 locator_value)
 
         elif action['action_type'] == 'click':
@@ -272,10 +327,10 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
             else:
                 logging.warning("Element not found for click action with locator '%s'. Action skipped.", locator_value)
 
-        elif action['action_type'] == 'retrieve_value':
+        if action['action_type'] == 'retrieve_value':
             if element is not None:
                 retrieved_value = element.get_attribute('value')
-                field_name = action.get('output_field', 'retrieved_value')
+                field_name = action.get('output_field', 'old_value_column1')  # Set dynamically, e.g., old_value_column2
                 output_data[field_name] = retrieved_value
                 logging.info("Retrieved value from element with locator '%s': %s", locator_value, retrieved_value)
             else:
@@ -295,11 +350,76 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
                         logging.info("Dropdown already set to '%s'; no action taken for locator '%s'", dropdown_value,
                                      locator_value)
                 except Exception as e:
-                    logging.error("Could not select '%s' from dropdown with locator '%s'. Error: %s",
-                                  dropdown_value, locator_value, str(e))
+                    logging.error("Could not select '%s' from dropdown with locator '%s'. Error: %s", dropdown_value,
+                                  locator_value, str(e))
             else:
                 logging.warning(
                     "Dropdown element not found or dropdown_value missing for action with locator '%s'. Action skipped.",
+                    locator_value)
+
+        elif action['action_type'] == 'switch_to_new_tab':
+            original_tab_handle = driver.current_window_handle
+            logging.info("Original tab handle: %s", original_tab_handle)
+            WebDriverWait(driver, 10).until(lambda d: len(d.window_handles) > 1)
+            all_handles = driver.window_handles
+            new_tab_handle = [handle for handle in all_handles if handle != original_tab_handle]
+            if new_tab_handle:
+                driver.switch_to.window(new_tab_handle[0])
+                logging.info("Switched to the new tab with handle: %s", new_tab_handle[0])
+            else:
+                logging.warning("New tab not found. Staying on the original tab.")
+
+        elif action['action_type'] == 'switch_to_frame':
+            if element is not None:
+                driver.switch_to.frame(element)
+                logging.info("Switched to iframe with locator '%s'", locator_value)
+            else:
+                logging.warning("Element not found for switch_to_frame action with locator '%s'. Action skipped.",
+                                locator_value)
+
+        elif action['action_type'] == 'delete_printer_records':
+            delete_printer_records(driver)  # Call the delete function
+
+        elif action['action_type'] == 'toggle_checkbox':
+            desired_state = action.get('desired_state', 'check')  # Default to checking if not specified
+            if element is not None:
+                # Check the current state of the checkbox using JavaScript
+                is_checked = driver.execute_script("return arguments[0].checked;", element)
+
+                if desired_state == 'check' and not is_checked:
+                    try:
+                        # Scroll the checkbox into view
+                        driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+                        # Click the checkbox if unchecked
+                        element.click()
+                        logging.info("Checked the checkbox with locator '%s'", locator_value)
+
+                    except Exception as e:
+                        logging.error("Error while trying to check checkbox with locator '%s': %s", locator_value, e)
+
+                elif desired_state == 'uncheck' and is_checked:
+                    try:
+                        # Scroll the checkbox into view
+                        driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+                        # Click the associated label to uncheck the checkbox
+                        label_element = driver.find_element(By.XPATH, f"//label[@for='{element.get_attribute('id')}']")
+                        label_element.click()
+                        logging.info("Unchecked the checkbox using the label for locator '%s'", locator_value)
+
+                    except Exception as e:
+                        logging.error("Error while trying to uncheck checkbox with label '%s': %s", locator_value, e)
+
+                elif desired_state == 'uncheck' and not is_checked:
+                    logging.info("Checkbox with locator '%s' is already unchecked. No action needed.", locator_value)
+
+                elif desired_state == 'check' and is_checked:
+                    logging.info("Checkbox with locator '%s' is already checked. No action needed.", locator_value)
+
+            else:
+                logging.warning(
+                    "Checkbox element not found for toggle_checkbox action with locator '%s'. Action skipped.",
                     locator_value)
 
         print(f"Executed step: {action['step_no']} , {action['description']}")
@@ -312,27 +432,60 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
     return output_data
 
 
+import openpyxl
+from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
+
+
 def main(input_file_path, output_file_path, sheet_name, config_file_path):
     logging.info("Automation process started.")
 
     # Load task data from Excel
     task_data = excel_to_json(input_file_path, sheet_name)
+    df_output = pd.read_excel("../Input/output_data.xlsx")
 
     # Load configuration from YAML
     with open(config_file_path, 'r') as f:
         task_config = yaml.safe_load(f)
 
     username = os.getenv('AUTOMATION_USERNAME', 'casey.brown')  # Load from environment variable
-    password = os.getenv('AUTOMATION_PASSWORD', 'riH%2B3^')  # Load from environment variable
+    password = os.getenv('AUTOMATION_PASSWORD', 'Ks?6BK%8')  # Load from environment variable
     url = "https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com/"
 
     # Variable to track the current browser and subtask
     current_browser = None
     current_subtask_id = None
     is_first_run = True
+    output_list = []
+    output_dict = {}
+
+    # Define the column order you want in the output Excel file
+    column_order = ['Task', 'Action', 'Configuration', 'Updated_Column1', 'New_Data1', 'Old_Data1', 'Updated_Column2',
+        'New_Data2', 'Old_Data2', 'Updated_Column3', 'New_Data3', 'Old_Data3', 'Updated_Column4', 'New_Data4',
+        'Old_Data4', 'Result', 'Comment']
 
     for data in task_data:
         subtask_id = str(data['Subtask ID'])
+        output_dict["Task"] = str(data['Task Name'])
+        output_dict["Action"] = 'Updating Configuration ' + str(data['Configuration Name']) + ' Updating Column ' + str(
+            data['Column Name1']) + ' , ' + str(data['Column Name2']) + ' , ' + str(data['Column Name3']) + ' , ' + str(
+            data['Column Name4'])
+        output_dict['Configuration'] = str(data['Configuration Name'])
+        output_dict['Updated_Column1'] = str(data['Column Name1'])
+        output_dict['New_Data1'] = str(data['Value1'])
+        output_dict['Updated_Column2'] = str(data['Column Name2'])
+        output_dict['New_Data2'] = str(data['Value2'])
+        output_dict['Updated_Column3'] = str(data['Column Name3'])
+        output_dict['New_Data3'] = str(data['Value3'])
+        output_dict['Updated_Column4'] = str(data['Column Name4'])
+        output_dict['New_Data4'] = str(data['Value4'])
+
+        # Ensure Old_Data columns are initialized as empty
+        output_dict['Old_Data1'] = ''
+        output_dict['Old_Data2'] = ''
+        output_dict['Old_Data3'] = ''
+        output_dict['Old_Data4'] = ''
+        output_dict['Result'] = ''
+        output_dict['Comment'] = ''
 
         # Check if the subtask ID is present in the YAML config
         if subtask_id not in task_config['tasks']:
@@ -355,17 +508,74 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
             is_first_run = True  # Set to True for a new subtask
 
         # Perform the task with the current browser
-        perform_task(current_browser, task_config['tasks'][subtask_id], data, username, password, url, subtask_id,
-                     is_first_run)
+        task_output_data = perform_task(current_browser, task_config['tasks'][subtask_id], data, username, password,
+                                        url, subtask_id, is_first_run)
 
         # After performing the task, set is_first_run to False
         is_first_run = False
+
+        # Update the output_dict with any retrieved values from perform_task (like Old_Data1, Old_Data2)
+        for i in range(1, 5):
+            field_name = f'old_value_column{i}'
+            if field_name in task_output_data:
+                output_dict[f'Old_Data{i}'] = task_output_data[field_name]
+
+        output_list.append(output_dict)
+
     # After all subtasks are processed, close the browser
     if current_browser is not None:
         current_browser.quit()
         logging.info("Closed the final browser.")
 
+    # Convert the output list to a DataFrame and ensure the correct column order
+    output_data = pd.DataFrame(output_list)
+
+    # Reorder the columns according to the specified order
+    output_data = output_data[column_order]
+
+    # Save the final output to Excel
+    output_data.to_excel(output_file_path, index=False)
+
+    # Now apply formatting with openpyxl for better readability
+    wb = openpyxl.load_workbook(output_file_path)
+    ws = wb.active
+
+    # Apply bold font to the header row
+    for cell in ws[1]:
+        cell.font = Font(bold=True)
+        cell.alignment = Alignment(horizontal="center", vertical="center")
+
+    # Apply borders to all cells
+    thin_border = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'),
+                         bottom=Side(style='thin'))
+    for row in ws.iter_rows():
+        for cell in row:
+            cell.border = thin_border
+
+    # Apply alternating row colors (light gray)
+    for row in range(2, ws.max_row + 1):
+        if row % 2 == 0:
+            for cell in ws[row]:
+                cell.fill = PatternFill(start_color="D9D9D9", end_color="D9D9D9", fill_type="solid")
+
+    # Auto-adjust column widths
+    for col in ws.columns:
+        max_length = 0
+        column = col[0].column_letter  # Get the column name
+        for cell in col:
+            try:
+                if len(str(cell.value)) > max_length:
+                    max_length = len(cell.value)
+            except:
+                pass
+        adjusted_width = (max_length + 2)  # Adding some padding for the content
+        ws.column_dimensions[column].width = adjusted_width
+
+    # Save the formatted Excel file
+    wb.save(output_file_path)
+    print('Test I Am here')
+    print(output_data)
 
 
 if __name__ == "__main__":
-    main('../Input/input_data.xlsx', '../Input/output_data.xlsx', 'Input Details', '../Config/config.yaml')
+    main('../Input/input_data.xlsx', '../Input/output_data.xlsx', 'Input Details', '../Config/config1.yaml')

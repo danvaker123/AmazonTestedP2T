@@ -1,8 +1,206 @@
-2024-11-07 20:40:16,235 | INFO | Automation process started.
-2024-11-07 20:40:26,932 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com/
-2024-11-07 20:40:31,979 | INFO | Clicked element with locator 'userid'
-2024-11-07 20:40:32,049 | INFO | Sent keys to element with locator 'userid': casey.brown
-2024-11-07 20:40:32,100 | INFO | Clicked element with locator 'password'
-2024-11-07 20:40:32,159 | INFO | Sent keys to element with locator 'password': Ks?6BK%8
-2024-11-07 20:40:33,095 | INFO | Clicked element with locator 'btnActive'
-2024-11-07 20:40:33,096 | INFO | Waiting for 10 seconds...
+2024-11-07 20:54:27,385 | INFO | Automation process started.
+2024-11-07 20:54:34,722 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com/
+2024-11-07 20:54:39,764 | INFO | Clicked element with locator 'userid'
+2024-11-07 20:54:39,813 | INFO | Sent keys to element with locator 'userid': casey.brown
+2024-11-07 20:54:39,856 | INFO | Clicked element with locator 'password'
+2024-11-07 20:54:39,907 | INFO | Sent keys to element with locator 'password': Ks?6BK%8
+2024-11-07 20:55:01,839 | INFO | Clicked element with locator 'btnActive'
+2024-11-07 20:55:01,840 | INFO | Waiting for 10 seconds...
+2024-11-07 20:55:11,898 | INFO | Clicked element with locator 'pt1:_UIScmil3u'
+2024-11-07 20:55:11,898 | INFO | Waiting for 5 seconds...
+2024-11-07 20:55:22,643 | INFO | Clicked element with locator 'pt1:_UIScmi4'
+2024-11-07 20:55:22,643 | INFO | Waiting for 10 seconds...
+2024-11-07 20:55:32,695 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+2024-11-07 20:55:32,695 | INFO | Waiting for 5 seconds...
+2024-11-07 20:55:37,750 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+2024-11-07 20:55:37,750 | INFO | Waiting for 5 seconds...
+2024-11-07 20:55:42,841 | INFO | Sent keys to element with locator 'pt1:r1:0:r0:1:AP1:s9:it1::content': Manage Transmission Configurations
+2024-11-07 20:55:42,841 | INFO | Waiting for 5 seconds...
+2024-11-07 20:55:47,892 | INFO | Clicked element with locator 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+2024-11-07 20:55:47,892 | INFO | Waiting for 5 seconds...
+2024-11-07 20:55:52,939 | INFO | Clicked element with locator '//*[contains(text(), 'Manage Transmission Configurations')]'
+2024-11-07 20:55:52,940 | INFO | Waiting for 5 seconds...
+2024-11-07 20:55:57,982 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content'
+2024-11-07 20:55:58,043 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content': SDD - Acknowledgement
+2024-11-07 20:55:58,091 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1::search'
+2024-11-07 20:55:58,091 | INFO | Waiting for 5 seconds...
+2024-11-07 20:56:03,152 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(), 'SDD - Acknowledgement')]'
+2024-11-07 20:56:03,152 | INFO | Waiting for 5 seconds...
+2024-11-07 20:56:08,195 | INFO | Clicked element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']'
+2024-11-07 20:56:08,210 | INFO | Retrieved value from element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']': klnjolwmklml
+2024-11-07 20:56:08,287 | INFO | Sent keys to element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']': bdkjabdknk
+2024-11-07 20:56:08,287 | INFO | Waiting for 3 seconds...
+2024-11-07 20:56:11,343 | INFO | Clicked element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']'
+2024-11-07 20:56:11,359 | INFO | Retrieved value from element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']': klnldsnlfnl
+2024-11-07 20:56:11,421 | INFO | Sent keys to element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']': ldnsldnlsn
+2024-11-07 20:56:11,421 | INFO | Waiting for 3 seconds...
+2024-11-07 20:56:24,758 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF710D838A5+3004357]
+	(No symbol) [0x00007FF710A19970]
+	(No symbol) [0x00007FF7108C582A]
+	(No symbol) [0x00007FF710915B8E]
+	(No symbol) [0x00007FF710915E7C]
+	(No symbol) [0x00007FF71095EC27]
+	(No symbol) [0x00007FF71093BC1F]
+	(No symbol) [0x00007FF71095BA4C]
+	(No symbol) [0x00007FF71093B983]
+	(No symbol) [0x00007FF710907628]
+	(No symbol) [0x00007FF710908791]
+	GetHandleVerifier [0x00007FF710DAA00D+3161901]
+	GetHandleVerifier [0x00007FF710DFE060+3506048]
+	GetHandleVerifier [0x00007FF710DF400D+3465005]
+	GetHandleVerifier [0x00007FF710B70EEB+830987]
+	(No symbol) [0x00007FF710A2467F]
+	(No symbol) [0x00007FF710A209D4]
+	(No symbol) [0x00007FF710A20B6D]
+	(No symbol) [0x00007FF710A10149]
+	BaseThreadInitThunk [0x00007FFFDDF77374+20]
+	RtlUserThreadStart [0x00007FFFDE83CC91+33]
+
+2024-11-07 20:56:35,106 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF710D838A5+3004357]
+	(No symbol) [0x00007FF710A19970]
+	(No symbol) [0x00007FF7108C582A]
+	(No symbol) [0x00007FF710915B8E]
+	(No symbol) [0x00007FF710915E7C]
+	(No symbol) [0x00007FF71095EC27]
+	(No symbol) [0x00007FF71093BC1F]
+	(No symbol) [0x00007FF71095BA4C]
+	(No symbol) [0x00007FF71093B983]
+	(No symbol) [0x00007FF710907628]
+	(No symbol) [0x00007FF710908791]
+	GetHandleVerifier [0x00007FF710DAA00D+3161901]
+	GetHandleVerifier [0x00007FF710DFE060+3506048]
+	GetHandleVerifier [0x00007FF710DF400D+3465005]
+	GetHandleVerifier [0x00007FF710B70EEB+830987]
+	(No symbol) [0x00007FF710A2467F]
+	(No symbol) [0x00007FF710A209D4]
+	(No symbol) [0x00007FF710A20B6D]
+	(No symbol) [0x00007FF710A10149]
+	BaseThreadInitThunk [0x00007FFFDDF77374+20]
+	RtlUserThreadStart [0x00007FFFDE83CC91+33]
+
+2024-11-07 20:56:35,106 | WARNING | Skipping action 'Send Column 3 associated value' because required input value is missing.
+2024-11-07 20:56:35,106 | INFO | Waiting for 3 seconds...
+2024-11-07 20:56:48,363 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF710D838A5+3004357]
+	(No symbol) [0x00007FF710A19970]
+	(No symbol) [0x00007FF7108C582A]
+	(No symbol) [0x00007FF710915B8E]
+	(No symbol) [0x00007FF710915E7C]
+	(No symbol) [0x00007FF71095EC27]
+	(No symbol) [0x00007FF71093BC1F]
+	(No symbol) [0x00007FF71095BA4C]
+	(No symbol) [0x00007FF71093B983]
+	(No symbol) [0x00007FF710907628]
+	(No symbol) [0x00007FF710908791]
+	GetHandleVerifier [0x00007FF710DAA00D+3161901]
+	GetHandleVerifier [0x00007FF710DFE060+3506048]
+	GetHandleVerifier [0x00007FF710DF400D+3465005]
+	GetHandleVerifier [0x00007FF710B70EEB+830987]
+	(No symbol) [0x00007FF710A2467F]
+	(No symbol) [0x00007FF710A209D4]
+	(No symbol) [0x00007FF710A20B6D]
+	(No symbol) [0x00007FF710A10149]
+	BaseThreadInitThunk [0x00007FFFDDF77374+20]
+	RtlUserThreadStart [0x00007FFFDE83CC91+33]
+
+2024-11-07 20:56:58,634 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF710D838A5+3004357]
+	(No symbol) [0x00007FF710A19970]
+	(No symbol) [0x00007FF7108C582A]
+	(No symbol) [0x00007FF710915B8E]
+	(No symbol) [0x00007FF710915E7C]
+	(No symbol) [0x00007FF71095EC27]
+	(No symbol) [0x00007FF71093BC1F]
+	(No symbol) [0x00007FF71095BA4C]
+	(No symbol) [0x00007FF71093B983]
+	(No symbol) [0x00007FF710907628]
+	(No symbol) [0x00007FF710908791]
+	GetHandleVerifier [0x00007FF710DAA00D+3161901]
+	GetHandleVerifier [0x00007FF710DFE060+3506048]
+	GetHandleVerifier [0x00007FF710DF400D+3465005]
+	GetHandleVerifier [0x00007FF710B70EEB+830987]
+	(No symbol) [0x00007FF710A2467F]
+	(No symbol) [0x00007FF710A209D4]
+	(No symbol) [0x00007FF710A20B6D]
+	(No symbol) [0x00007FF710A10149]
+	BaseThreadInitThunk [0x00007FFFDDF77374+20]
+	RtlUserThreadStart [0x00007FFFDE83CC91+33]
+
+2024-11-07 20:56:58,634 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
+2024-11-07 20:56:58,634 | INFO | Waiting for 3 seconds...
+2024-11-07 20:57:01,698 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:1:AP1:APscl2'
+2024-11-07 20:57:01,698 | INFO | Waiting for 5 seconds...
+2024-11-07 20:57:06,752 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
+2024-11-07 20:57:06,752 | INFO | Task 'Manage Transmission Configurations' with Subtask 'SDD - Acknowledgement' executed successfully.
+2024-11-07 20:57:09,110 | INFO | Closed browser for subtask 101. Starting new subtask 102.
+2024-11-07 20:57:21,624 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com/
+2024-11-07 20:57:26,741 | INFO | Clicked element with locator 'userid'
+2024-11-07 20:57:26,836 | INFO | Sent keys to element with locator 'userid': casey.brown
+2024-11-07 20:57:26,885 | INFO | Clicked element with locator 'password'
+2024-11-07 20:57:26,991 | INFO | Sent keys to element with locator 'password': Ks?6BK%8
+2024-11-07 20:57:44,876 | INFO | Clicked element with locator 'btnActive'
+2024-11-07 20:57:44,876 | INFO | Waiting for 10 seconds...
+2024-11-07 20:57:54,940 | INFO | Clicked element with locator 'pt1:_UIScmil3u'
+2024-11-07 20:57:54,940 | INFO | Waiting for 5 seconds...
+2024-11-07 20:58:04,615 | INFO | Clicked element with locator 'pt1:_UIScmi4'
+2024-11-07 20:58:04,615 | INFO | Waiting for 10 seconds...
+2024-11-07 20:58:14,676 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+2024-11-07 20:58:14,676 | INFO | Waiting for 5 seconds...
+2024-11-07 20:58:19,732 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+2024-11-07 20:58:19,732 | INFO | Waiting for 5 seconds...
+2024-11-07 20:58:24,831 | INFO | Sent keys to element with locator 'pt1:r1:0:r0:1:AP1:s9:it1::content': Manage Administrator Profile Values
+2024-11-07 20:58:24,832 | INFO | Waiting for 5 seconds...
+2024-11-07 20:58:29,883 | INFO | Clicked element with locator 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+2024-11-07 20:58:29,883 | INFO | Waiting for 5 seconds...
+2024-11-07 20:58:34,929 | INFO | Clicked element with locator '//*[contains(text(), 'Manage Administrator Profile Values')]'
+2024-11-07 20:58:34,929 | INFO | Waiting for 5 seconds...
+2024-11-07 20:58:39,977 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:qryId1:value10::content'
+2024-11-07 20:58:39,977 | INFO | Waiting for 5 seconds...
+2024-11-07 20:58:45,031 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:qryId1:value10::content': Banner
+2024-11-07 20:58:45,031 | INFO | Waiting for 5 seconds...
+2024-11-07 20:58:50,107 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:qryId1::search'
+2024-11-07 20:58:50,107 | INFO | Waiting for 10 seconds...
+2024-11-07 20:59:01,215 | ERROR | An error occurred while performing action 'Click on Search Icon': Message: element click intercepted: Element <input id="pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:it3::content" name="pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:it3" style="width:auto" class="x25" size="500" autocomplete="off" maxlength="1000" type="text" value="Automation Testing on 12:15PM IST" aria-live="off"> is not clickable at point (889, 819). Other element would receive the click: <div dir="auto" class="oda-chat-button-drag-handle"></div>
+  (Session info: chrome=130.0.6723.116)
+Stacktrace:
+	GetHandleVerifier [0x00007FF710D838A5+3004357]
+	(No symbol) [0x00007FF710A19970]
+	(No symbol) [0x00007FF7108C582A]
+	(No symbol) [0x00007FF71091D80E]
+	(No symbol) [0x00007FF71091B2AC]
+	(No symbol) [0x00007FF710918778]
+	(No symbol) [0x00007FF71091798C]
+	(No symbol) [0x00007FF71090996E]
+	(No symbol) [0x00007FF71093BBDA]
+	(No symbol) [0x00007FF7109092A6]
+	(No symbol) [0x00007FF71093BDF0]
+	(No symbol) [0x00007FF71095BA4C]
+	(No symbol) [0x00007FF71093B983]
+	(No symbol) [0x00007FF710907628]
+	(No symbol) [0x00007FF710908791]
+	GetHandleVerifier [0x00007FF710DAA00D+3161901]
+	GetHandleVerifier [0x00007FF710DFE060+3506048]
+	GetHandleVerifier [0x00007FF710DF400D+3465005]
+	GetHandleVerifier [0x00007FF710B70EEB+830987]
+	(No symbol) [0x00007FF710A2467F]
+	(No symbol) [0x00007FF710A209D4]
+	(No symbol) [0x00007FF710A20B6D]
+	(No symbol) [0x00007FF710A10149]
+	BaseThreadInitThunk [0x00007FFFDDF77374+20]
+	RtlUserThreadStart [0x00007FFFDE83CC91+33]
+
+2024-11-07 20:59:01,216 | INFO | Waiting for 7 seconds...
+2024-11-07 20:59:08,238 | INFO | Retrieved value from element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:it3::content': Automation Testing on 12:15PM IST
+2024-11-07 20:59:08,239 | INFO | Waiting for 7 seconds...
+2024-11-07 20:59:15,325 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:AT4:_ATp:ATt4:0:it3::content': Automation Testingdnksnsndlksmn
+2024-11-07 20:59:15,325 | INFO | Waiting for 5 seconds...
+2024-11-07 20:59:20,393 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:AP2:APscl'
+2024-11-07 20:59:20,393 | INFO | Waiting for 5 seconds...
+2024-11-07 20:59:25,395 | INFO | Task 'Manage Administrator Profile Values' with Subtask 'Profile Display Name' executed successfully.
+2024-11-07 20:59:27,764 | INFO | Closed the final browser.
