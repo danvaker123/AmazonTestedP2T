@@ -232,7 +232,8 @@ def perform_task(driver, task_config, task_data, username, password, url, subtas
             # Perform the action (send_keys, click, etc.)
             perform_action(driver, action, task_data, username, password)
 
-        logging.info("Task %s executed successfully.", task_data['Task Name'])
+        logging.info("Task '%s' with Subtask '%s' executed successfully.", task_data['Task Name'], task_data['Configuration Name'])
+
 
     except Exception as e:
         logging.error("Error occurred during task execution: %s", e)
@@ -295,7 +296,7 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
 
     # Wait for the element to be present if action requires it
     element = None
-    if action['action_type'] in ['send_keys', 'click', 'find', 'retrieve_value', 'send_keys_enter', 'select_dropdown', 'switch_to_frame']:
+    if action['action_type'] in ['send_keys', 'click', 'find', 'retrieve_value', 'send_keys_enter', 'select_dropdown', 'switch_to_frame', 'toggle_checkbox']:
         locator_type = get_by_type(action['locator_type'])
         try:
             element = wait_for_element(driver, locator_type, locator_value)
@@ -311,16 +312,14 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
                 element.send_keys(input_value)
                 logging.info("Sent keys to element with locator '%s': %s", locator_value, input_value)
             else:
-                logging.warning("Element not found for send_keys action with locator '%s'. Action skipped.",
-                                locator_value)
+                logging.warning("Element not found for send_keys action with locator '%s'. Action skipped.", locator_value)
 
         elif action['action_type'] == 'send_keys_enter':
             if element is not None:
                 element.send_keys(Keys.ENTER)
                 logging.info("Sent ENTER to element with locator '%s'", locator_value)
             else:
-                logging.warning("Element not found for send_keys_enter action with locator '%s'. Action skipped.",
-                                locator_value)
+                logging.warning("Element not found for send_keys_enter action with locator '%s'. Action skipped.", locator_value)
 
         elif action['action_type'] == 'click':
             if element is not None:
@@ -336,8 +335,7 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
                 output_data[field_name] = retrieved_value
                 logging.info("Retrieved value from element with locator '%s': %s", locator_value, retrieved_value)
             else:
-                logging.warning("Element not found for retrieve_value action with locator '%s'. Action skipped.",
-                                locator_value)
+                logging.warning("Element not found for retrieve_value action with locator '%s'. Action skipped.", locator_value)
 
         elif action['action_type'] == 'select_dropdown':
             dropdown_value = action.get('dropdown_value')
@@ -349,27 +347,18 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
                         select.select_by_visible_text(dropdown_value)
                         logging.info("Selected '%s' from dropdown with locator '%s'", dropdown_value, locator_value)
                     else:
-                        logging.info("Dropdown already set to '%s'; no action taken for locator '%s'", dropdown_value,
-                                     locator_value)
+                        logging.info("Dropdown already set to '%s'; no action taken for locator '%s'", dropdown_value, locator_value)
                 except Exception as e:
-                    logging.error("Could not select '%s' from dropdown with locator '%s'. Error: %s", dropdown_value,
-                                  locator_value, str(e))
+                    logging.error("Could not select '%s' from dropdown with locator '%s'. Error: %s", dropdown_value, locator_value, str(e))
             else:
-                logging.warning(
-                    "Dropdown element not found or dropdown_value missing for action with locator '%s'. Action skipped.",
-                    locator_value)
+                logging.warning("Dropdown element not found or dropdown_value missing for action with locator '%s'. Action skipped.", locator_value)
 
         elif action['action_type'] == 'switch_to_new_tab':
-            # Capture the original tab handle before switching
             original_tab_handle = driver.current_window_handle
             logging.info("Original tab handle: %s", original_tab_handle)
-            # Wait for the new tab to open
             WebDriverWait(driver, 10).until(lambda d: len(d.window_handles) > 1)
-            # Get all window handles
             all_handles = driver.window_handles
-            # Find the new tab handle by excluding the original tab handle
             new_tab_handle = [handle for handle in all_handles if handle != original_tab_handle]
-
             if new_tab_handle:
                 driver.switch_to.window(new_tab_handle[0])
                 logging.info("Switched to the new tab with handle: %s", new_tab_handle[0])
@@ -381,11 +370,52 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
                 driver.switch_to.frame(element)
                 logging.info("Switched to iframe with locator '%s'", locator_value)
             else:
-                logging.warning("Element not found for switch_to_frame action with locator '%s'. Action skipped.",
-                                locator_value)
+                logging.warning("Element not found for switch_to_frame action with locator '%s'. Action skipped.", locator_value)
 
         elif action['action_type'] == 'delete_printer_records':
             delete_printer_records(driver)  # Call the delete function
+
+        elif action['action_type'] == 'toggle_checkbox':
+            desired_state = action.get('desired_state', 'check')  # Default to checking if not specified
+            if element is not None:
+                # Check the current state of the checkbox using JavaScript
+                is_checked = driver.execute_script("return arguments[0].checked;", element)
+
+                if desired_state == 'check' and not is_checked:
+                    try:
+                        # Scroll the checkbox into view
+                        driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+                        # Click the checkbox if unchecked
+                        element.click()
+                        logging.info("Checked the checkbox with locator '%s'", locator_value)
+
+                    except Exception as e:
+                        logging.error("Error while trying to check checkbox with locator '%s': %s", locator_value, e)
+
+                elif desired_state == 'uncheck' and is_checked:
+                    try:
+                        # Scroll the checkbox into view
+                        driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
+                        # Click the associated label to uncheck the checkbox
+                        label_element = driver.find_element(By.XPATH, f"//label[@for='{element.get_attribute('id')}']")
+                        label_element.click()
+                        logging.info("Unchecked the checkbox using the label for locator '%s'", locator_value)
+
+                    except Exception as e:
+                        logging.error("Error while trying to uncheck checkbox with label '%s': %s", locator_value, e)
+
+                elif desired_state == 'uncheck' and not is_checked:
+                    logging.info("Checkbox with locator '%s' is already unchecked. No action needed.", locator_value)
+
+                elif desired_state == 'check' and is_checked:
+                    logging.info("Checkbox with locator '%s' is already checked. No action needed.", locator_value)
+
+            else:
+                logging.warning(
+                    "Checkbox element not found for toggle_checkbox action with locator '%s'. Action skipped.",
+                    locator_value)
 
         print(f"Executed step: {action['step_no']} , {action['description']}")
 
@@ -395,6 +425,7 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
     print(output_data)
 
     return output_data
+
 
 
 def main(input_file_path, output_file_path, sheet_name, config_file_path):

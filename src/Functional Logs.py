@@ -4,12 +4,12 @@ import pandas as pd
 
 
 def functional_log_maker():
-    file_path = r"Input\input_data.xlsx"
+    file_path = "../Input/input_data.xlsx"
 
     df = pd.read_excel(file_path)
     task_name = df['Task Name'].to_list()
 
-    log_file_path = r'src\automation_log.txt'
+    log_file_path = ""
 
     with open(log_file_path, 'r') as file:
         content = file.readlines()

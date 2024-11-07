@@ -2177,8 +2177,137 @@ tasks:
           duration: 5
           description: Wait for the page
           input_field: { }
-
-
+  '110':
+    task:
+      actions:
+        - step_no: 1
+          action_type: click
+          locator_type: id
+          locator_value: userid
+          description: Click on username
+          input_field: null
+        - step_no: 2
+          action_type: send_keys
+          locator_type: id
+          locator_value: userid
+          description: send username
+          input_field:
+            type: command_line
+            field_name: username
+        - step_no: 3
+          action_type: click
+          locator_type: id
+          locator_value: password
+          description: CLick on  password
+          input_field: null
+        - step_no: 4
+          action_type: send_keys
+          locator_type: id
+          locator_value: password
+          description: Send password
+          input_field:
+            type: command_line
+            field_name: password
+        - step_no: 5
+          action_type: click
+          locator_type: id
+          locator_value: btnActive
+          description: Click on Sign In Button
+          input_field: null
+        - step_no: 6
+          action_type: wait
+          duration: 10
+          description: Wait for the page
+          input_field: {}
+        - step_no: 7
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UISmmLink'
+          description: Click on Navigator Button
+          input_field: null
+        - step_no: 8
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+        - step_no: 9
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UISnvr:0:nvgpgl2_groupNode_tools'
+          description: Click on Tool Button
+          input_field: null
+        - step_no: 10
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+        - step_no: 11
+          action_type: click
+          locator_type: id
+          locator_value: 'pt1:_UISnvr:0:nv_ASE_FUSE_SECURITY_CONSOLE'
+          description: Click on Security Console Button
+          input_field: null
+        - step_no: 12
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+        - step_no: 11
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:_FOTsdiASE_FUSE_UC_WORKAREA::text'
+          description: Click on User Categories Button
+          input_field: null
+        - step_no: 12
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+        - step_no: 13
+          action_type: click
+          locator_type: xpath
+          locator_value: >-
+            //div[@id='_FOpt1:_FOr1:0:_FONSr2:0:_FOTr4:1:sp1:SPpgl23']//*[contains(text(),
+            '{configuration_name}')]
+          description: Click on User Categories
+          input_field: { }
+        - step_no: 12
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+        - step_no: 13
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:MAnt2:1:ucSp1:ucNotifications::text'
+          description: Click on Notification Button
+        - step_no: 14
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+        - step_no: 15
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:MAnt2:1:ucSp1:cb6'
+          description: Click on Edit Button
+        - step_no: 16
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+        - step_no: 17
+          action_type: toggle_checkbox
+          locator_type: id
+          locator_value: "_FOpt1:_FOr1:0:_FONSr2:0:MAnt2:2:sp1:sbc211::content"
+          description: "Uncheck the checkbox for disabling"
+          desired_state: "uncheck"  # or "uncheck"
+        - step_no: 18
+          action_type: wait
+          duration: 8
+          description: Wait for the page
+        - step_no: 19
+          action_type: click
+          locator_type: id
+          locator_value: '_FOpt1:_FOr1:0:_FONSr2:0:MAnt2:2:sp1:cb2'
+          description: Click on Save Button
+        - step_no: 20
+          action_type: wait
+          duration: 8
+          description: Wait for the page
 
 
 
