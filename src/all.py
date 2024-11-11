@@ -3,8 +3,10 @@ import logging
 import os
 import time
 
+import openpyxl
 import pandas as pd
 import yaml
+from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from selenium import webdriver
 from selenium.common import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 from selenium.webdriver import Keys
@@ -14,8 +16,48 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 
 # Set up logging configuration
-logging.basicConfig(filename='automation_log.txt', level=logging.INFO,
+logging.basicConfig(filename='../Logs/automation_log.txt', level=logging.INFO,
                     format='%(asctime)s | %(levelname)s | %(message)s', filemode='w')
+
+
+def functional_log_maker():
+    file_path = "../Input/input_data.xlsx"
+
+    # Load Excel data to get task and configuration names
+    df = pd.read_excel(file_path)
+    task_names = df['Task Name'].to_list()
+    config_names = df['Configuration Name'].to_list()
+
+    # Define the log file path
+    log_file_path = "../Logs/automation_log.txt"
+
+    # Read the content of the log file
+    with open(log_file_path, 'r') as file:
+        content = file.readlines()
+
+    # Create a list to store structured logs
+    function_log = []
+
+    # Iterate over task and configuration pairs to process each section
+    for idx, task in enumerate(task_names):
+        config = config_names[idx] if idx < len(config_names) else ""
+        section_header = f"\n--- Task: {task} | Configuration: {config} ---\n"
+        function_log.append(section_header)
+
+        for line in content:
+            # Capture relevant warnings and success messages under each task section
+            if "WARNING" in line and "Could not find element with locator" not in line:
+                function_log.append("    " + line.strip() + "\n")  # Indented for clarity
+            elif f"Task '{task}' with Subtask '{config}' executed successfully" in line:
+                function_log.append("    " + line.strip() + "\n")
+                break  # Move to the next task after successful execution
+
+    # Write the structured log to a new file
+    output_file = "../Logs/functional_log.txt"
+
+    with open(output_file, 'w') as file:
+        for entry in function_log:
+            file.write(entry)
 
 
 # Clear sheet content
@@ -137,6 +179,22 @@ def get_by_type(locator_type):
 def wait_for_element(driver, locator_type, locator_value):
     """Wait for an element to be present and return it."""
     return WebDriverWait(driver, 10).until(EC.presence_of_element_located((locator_type, locator_value)))
+
+
+def clear_text_box(driver, locator_type, locator_value):
+    try:
+        # Locate the element using the provided locator_type and locator_value
+        element = wait_for_element(driver, locator_type, locator_value)
+
+        if element is not None:
+            # Clear the text box
+            element.clear()
+            logging.info("Cleared text box with locator '%s'", locator_value)
+        else:
+            logging.warning("Element not found for clearing text box with locator '%s'. Action skipped.", locator_value)
+
+    except Exception as e:
+        logging.error("An error occurred while clearing text box with locator '%s': %s", locator_value, e)
 
 
 def delete_printer_records(driver):
@@ -293,7 +351,7 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
     # Wait for the element to be present if action requires it
     element = None
     if action['action_type'] in ['send_keys', 'click', 'find', 'retrieve_value', 'send_keys_enter', 'select_dropdown',
-                                 'switch_to_frame', 'toggle_checkbox']:
+                                 'switch_to_frame', 'toggle_checkbox', 'clear_text_box']:
         locator_type = get_by_type(action['locator_type'])
         try:
             element = wait_for_element(driver, locator_type, locator_value)
@@ -422,6 +480,14 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
                     "Checkbox element not found for toggle_checkbox action with locator '%s'. Action skipped.",
                     locator_value)
 
+        elif action['action_type'] == 'clear_text_box':
+            if element is not None:
+                element.clear()
+                logging.info("Cleared text box with locator '%s'", locator_value)
+            else:
+                logging.warning("Element not found for clear_text_box action with locator '%s'. Action skipped.",
+                                locator_value)
+
         print(f"Executed step: {action['step_no']} , {action['description']}")
 
     except Exception as e:
@@ -430,10 +496,6 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
     print(output_data)
 
     return output_data
-
-
-import openpyxl
-from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 
 
 def main(input_file_path, output_file_path, sheet_name, config_file_path):
@@ -456,36 +518,25 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
     current_subtask_id = None
     is_first_run = True
     output_list = []
-    output_dict = {}
 
     # Define the column order you want in the output Excel file
     column_order = ['Task', 'Action', 'Configuration', 'Updated_Column1', 'New_Data1', 'Old_Data1', 'Updated_Column2',
-        'New_Data2', 'Old_Data2', 'Updated_Column3', 'New_Data3', 'Old_Data3', 'Updated_Column4', 'New_Data4',
-        'Old_Data4', 'Result', 'Comment']
+                    'New_Data2', 'Old_Data2', 'Updated_Column3', 'New_Data3', 'Old_Data3', 'Updated_Column4',
+                    'New_Data4', 'Old_Data4', 'Result', 'Comment']
 
     for data in task_data:
         subtask_id = str(data['Subtask ID'])
-        output_dict["Task"] = str(data['Task Name'])
-        output_dict["Action"] = 'Updating Configuration ' + str(data['Configuration Name']) + ' Updating Column ' + str(
-            data['Column Name1']) + ' , ' + str(data['Column Name2']) + ' , ' + str(data['Column Name3']) + ' , ' + str(
-            data['Column Name4'])
-        output_dict['Configuration'] = str(data['Configuration Name'])
-        output_dict['Updated_Column1'] = str(data['Column Name1'])
-        output_dict['New_Data1'] = str(data['Value1'])
-        output_dict['Updated_Column2'] = str(data['Column Name2'])
-        output_dict['New_Data2'] = str(data['Value2'])
-        output_dict['Updated_Column3'] = str(data['Column Name3'])
-        output_dict['New_Data3'] = str(data['Value3'])
-        output_dict['Updated_Column4'] = str(data['Column Name4'])
-        output_dict['New_Data4'] = str(data['Value4'])
 
-        # Ensure Old_Data columns are initialized as empty
-        output_dict['Old_Data1'] = ''
-        output_dict['Old_Data2'] = ''
-        output_dict['Old_Data3'] = ''
-        output_dict['Old_Data4'] = ''
-        output_dict['Result'] = ''
-        output_dict['Comment'] = ''
+        # Ensure output_dict is freshly initialized for each task
+        output_dict = {"Task": str(data['Task Name']), "Action": 'Updating Configuration ' + str(
+            data['Configuration Name']) + ' Updating Column ' + str(data['Column Name1']) + ' , ' + str(
+            data['Column Name2']) + ' , ' + str(data['Column Name3']) + ' , ' + str(data['Column Name4']),
+                       'Configuration': str(data['Configuration Name']), 'Updated_Column1': str(data['Column Name1']),
+                       'New_Data1': str(data['Value1']), 'Updated_Column2': str(data['Column Name2']),
+                       'New_Data2': str(data['Value2']), 'Updated_Column3': str(data['Column Name3']),
+                       'New_Data3': str(data['Value3']), 'Updated_Column4': str(data['Column Name4']),
+                       'New_Data4': str(data['Value4']), 'Old_Data1': '',  # Initialize Old_Data columns as empty
+                       'Old_Data2': '', 'Old_Data3': '', 'Old_Data4': '', 'Result': '', 'Comment': ''}
 
         # Check if the subtask ID is present in the YAML config
         if subtask_id not in task_config['tasks']:
@@ -520,6 +571,7 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
             if field_name in task_output_data:
                 output_dict[f'Old_Data{i}'] = task_output_data[field_name]
 
+        # Append the updated output_dict to the output_list for this subtask
         output_list.append(output_dict)
 
     # After all subtasks are processed, close the browser
@@ -573,8 +625,7 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
 
     # Save the formatted Excel file
     wb.save(output_file_path)
-    print('Test I Am here')
-    print(output_data)
+    functional_log_maker()
 
 
 if __name__ == "__main__":
