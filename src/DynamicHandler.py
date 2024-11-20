@@ -17,6 +17,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.options import Options
 
 # Set up logging configuration
 logging.basicConfig(filename='../Logs/automation_log.txt', level=logging.INFO,
@@ -551,8 +552,19 @@ def upload_to_sharepoint(site_url, username, password, local_file_path, sharepoi
         target_folder.upload_file(os.path.basename(sharepoint_file_path), local_file.read()).execute_query()
     print(f"File uploaded to {sharepoint_file_path}")
 
+def start_browser():
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")  # Run in headless mode
+    chrome_options.add_argument("--disable-gpu")  # Disable GPU for headless mode
+    chrome_options.add_argument("--no-sandbox")  # Needed for Linux
+    chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resources in containerized environments
+    chrome_options.add_argument("--window-size=1920x1080")  # Set window size for screenshots or proper page rendering
+    chrome_options.add_argument("--start-maximized")  # Start maximized to handle elements correctly
 
-def main(input_file_path, output_file_path, sheet_name, config_file_path):
+    # Return the driver instance
+    return webdriver.Chrome(options=chrome_options)
+
+def main(input_file_path, output_file_path, sheet_name, config_file_path , username, password , url):
     logging.info("Automation process started.")
 
     # Load task data from Excel
@@ -563,23 +575,6 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
     with open(config_file_path, 'r') as f:
         task_config = yaml.safe_load(f)
 
-    # # Setup argparse to read command-line arguments
-    # parser = argparse.ArgumentParser(description="Automation Script with Command-Line Arguments")
-    # parser.add_argument('--username', required=True, help="Username for automation")
-    # parser.add_argument('--password', required=True, help="Password for automation")
-    # parser.add_argument('--url', required=True, help="URL for automation")
-    #
-    # # Parse the arguments
-    # args = parser.parse_args()
-    #
-    # # Assign command-line arguments to variables
-    # username = args.username
-    # password = args.password
-    # url = args.url
-
-    username = os.getenv('AUTOMATION_USERNAME', 'casey.brown')  # Load from environment variable
-    password = os.getenv('AUTOMATION_PASSWORD', 'h*6P%8te')  # Load from environment variable
-    url = os.getenv('AUTOMATION_URL', "https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com/")
 
     # Variable to track the current browser and subtask
     current_browser = None
@@ -622,7 +617,7 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
             if current_browser is not None:
                 current_browser.quit()
                 logging.info(f"Closed browser for subtask {current_subtask_id}. Starting new subtask {subtask_id}.")
-            current_browser = webdriver.Chrome()  # Start a new browser session for the new subtask
+            current_browser = start_browser() # Start a new browser session for the new subtask
             current_subtask_id = subtask_id  # Update current subtask ID
             is_first_run = True  # Set to True for a new subtask
 
@@ -697,4 +692,27 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path):
 
 
 if __name__ == "__main__":
-    main('../Input/input_data.xlsx', '../Input/output_data.xlsx', 'Input Details', '../Config/config1.yaml')
+    # main('../Input/input_data.xlsx', '../Input/output_data.xlsx', 'Input Details', '../Config/config1.yaml', 'casey.brown','hello1234','kdsdsldls')
+    parser = argparse.ArgumentParser(description="Automation Script Arguments")
+    parser.add_argument("--input_file", required=True, help="Path to the input Excel file.")
+    parser.add_argument("--sheet_name", required=True, help="Sheet name in the Excel input file.")
+    parser.add_argument("--username", required=True, help="Automation username.")
+    parser.add_argument("--password", required=True, help="Automation password.")
+    parser.add_argument("--url", required=True, help="URL to be automated.")
+
+    args = parser.parse_args()
+    config_file_path = '../Config/config1.yaml'
+    output_file_path = '../Input/output_data.xlsx'
+
+
+
+    main(
+        input_file_path=args.input_file,
+        output_file_path= output_file_path,
+        sheet_name=args.sheet_name,
+        config_file_path=config_file_path,
+        username=args.username,
+        password=args.password,
+        url=args.url,
+    )
+
