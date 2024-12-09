@@ -1,48 +1,88 @@
-import os
-from office365.runtime.auth.authentication_context import AuthenticationContext
+import requests
 from office365.sharepoint.client_context import ClientContext
+from office365.runtime.auth.client_credential import ClientCredential
 
 
-def download_from_sharepoint(site_url, username, password, sharepoint_file_path, local_file_path):
-    """Download a file from SharePoint."""
-    auth_context = AuthenticationContext(site_url)
-    if not auth_context.acquire_token_for_user(username, password):
-        raise Exception("Authentication failed")
+# Function to get access token from Azure AD
+def get_access_token(tenant_id, client_id, client_secret):
+    url = f"https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token"
 
-    ctx = ClientContext(site_url, auth_context)
-    sharepoint_file_url = f"{site_url}/{sharepoint_file_path}"
-    with open(local_file_path, "wb") as local_file:
-        file = ctx.web.get_file_by_server_relative_url(sharepoint_file_url)
+    body = {
+        'grant_type': 'client_credentials',
+        'client_id': client_id,
+        'client_secret': client_secret,
+        'scope': 'https://graph.microsoft.com/.default'  # This scope is for accessing Microsoft Graph
+    }
+
+    response = requests.post(url, data=body)
+
+    if response.status_code == 200:
+        access_token = response.json().get('access_token')
+        print("Access token obtained successfully!")
+        # Return the access token directly as a string
+        return access_token
+    else:
+        print(f"Failed to obtain access token: {response.status_code}")
+        print(response.text)
+        return None
+
+
+# Function to download file from SharePoint
+def download_from_sharepoint(site_url, client_id, client_secret, sharepoint_input_path, local_input_path):
+    # Create a context with the client credentials
+    ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
+
+    # Get the file and download it
+    file = ctx.web.get_file_by_server_relative_url(sharepoint_input_path)
+    with open(local_input_path, 'wb') as local_file:
         file.download(local_file).execute_query()
-    print(f"File downloaded to {local_file_path}")
+
+    print(f"Downloaded {sharepoint_input_path} to {local_input_path}")
 
 
-def upload_to_sharepoint(site_url, username, password, local_file_path, sharepoint_file_path):
-    """Upload a file to SharePoint."""
-    auth_context = AuthenticationContext(site_url)
-    if not auth_context.acquire_token_for_user(username, password):
-        raise Exception("Authentication failed")
+# Function to upload file to SharePoint
+def upload_to_sharepoint(site_url, client_id, client_secret, sharepoint_output_path, local_output_path):
+    # Create a context with the client credentials
+    ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
 
-    ctx = ClientContext(site_url, auth_context)
-    with open(local_file_path, "rb") as local_file:
-        target_folder = ctx.web.get_folder_by_server_relative_url(os.path.dirname(sharepoint_file_path))
-        target_folder.upload_file(os.path.basename(sharepoint_file_path), local_file.read()).execute_query()
-    print(f"File uploaded to {sharepoint_file_path}")
+    # Read the local file to upload
+    with open(local_output_path, 'rb') as local_file:
+        file_content = local_file.read()
+
+    # Upload the file to SharePoint
+    target_folder = ctx.web.get_folder_by_server_relative_url(sharepoint_output_path)
+    target_file = target_folder.upload_file(local_output_path.split("\\")[-1], file_content)
+    ctx.execute_query()
+
+    print(f"Uploaded {local_output_path} to {sharepoint_output_path}")
 
 
-# Set up SharePoint credentials and paths
-username = os.getenv('SHAREPOINT_USERNAME','achyut.kumar@us.gt.com')
-password = os.getenv('SHAREPOINT_PASSWORD', 'Aman@magic10')
-site_url = "https://gtus365.sharepoint.com/sites/technologysolutionsbangalore"
-sharepoint_input_path = "/Documents/Team Shared documents/P2T-POC/input_data.xlsx"
-sharepoint_output_path = "/Documents/Team Shared documents/P2T-POC/output_data.xlsx"
+# Main function to execute the download and upload process
+def main():
+    # Your credentials for Azure AD and SharePoint
+    tenant_id = '7d76d45a-a201-4a68-bf3a-597f0a5fa533'  # Your Directory ID
+    client_id = 'b25e7795-c312-4adf-b5ce-c391ef549d76'  # Your Application ID
+    client_secret = 'oM68Q~YvnnTh6nxwESnQ0kG_Qlr6UR2c6GjMXb5t'  # Your Client Secret Value
 
-# Example usage:
-local_input_path = r"C:\Users\US81896\OneDrive - Grant Thornton LLP\All\Desktop\input.xlsx"   # Local path to save downloaded file
-local_output_path = r"C:\Users\US81896\OneDrive - Grant Thornton LLP\All\Desktop\Output.xlsx" # Local path for file to upload
+    # SharePoint details
+    site_url = "https://gtus365.sharepoint.com/sites/technologysolutionsbangalore"  # Replace with your SharePoint site URL
+    sharepoint_input_path = "/Shared Documents/Team Shared documents/P2T- POC/Input and Output File  Folder/input_data.xlsx"
+    sharepoint_output_path = "/Shared Documents/Team Shared documents/P2T- POC/Input and Output File  Folder/output_data.xlsx"
 
-# Downloading file
-download_from_sharepoint(site_url, username, password, sharepoint_input_path, local_input_path)
+    # Local paths for downloading and uploading files
+    local_input_path = r"C:\Users\US81896\OneDrive - Grant Thornton LLP\All\Desktop\Input file.xlsx"  # Local path to save downloaded file
+    local_output_path = r"C:\Users\US81896\OneDrive - Grant Thornton LLP\All\Desktop\Output file.xlsx"  # Local path for file to upload
 
-# Uploading file
-upload_to_sharepoint(site_url, username, password, local_output_path, sharepoint_output_path)
+    # Get access token from Azure AD (Note: This step is not needed if using ClientCredential directly)
+    access_token = get_access_token(tenant_id, client_id, client_secret)
+
+    if access_token:
+        # Download the Excel file from SharePoint
+        download_from_sharepoint(site_url, client_id, client_secret, sharepoint_input_path, local_input_path)
+
+        # Upload the output file to SharePoint
+        upload_to_sharepoint(site_url, client_id, client_secret, sharepoint_output_path, local_output_path)
+
+
+if __name__ == "__main__":
+    main()

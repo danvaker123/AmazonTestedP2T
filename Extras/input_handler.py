@@ -1,7 +1,7 @@
 import pandas as pd
 
-def functional_log_maker():
-    file_path = "../Input/input_data.xlsx"
+def functional_log_maker(input_file_path):
+    file_path = input_file_path
 
     # Load Excel data to get task and configuration names
     df = pd.read_excel(file_path)
@@ -21,55 +21,29 @@ def functional_log_maker():
 
     # Iterate over task and configuration pairs to process each section
     for idx, task in enumerate(task_names):
-        # Get the configuration, and handle NaN or empty values gracefully
-        config = config_names[idx] if idx < len(config_names) else ""
-        if pd.isna(config) or config == "":
-            config = "None"
-
-        section_header = f"\n--- Task: {task} | Configuration: {config} ---\n"
+        section_header = f"\n--- Task: {task} | Configuration: {config_names[idx]} ---\n"
         function_log.append(section_header)
+        errors = []
+        warnings = []
+        success = True
 
-        # Flags for tracking task state
-        task_error_found = False
-        task_warning_found = False
-        task_success_found = False
-
-        # Temporary storage for current task logs
-        current_task_log = []
-
-        # Iterate over the log content to process warnings, errors, and success messages
         for line in content:
-            # Check if the line is relevant to the current task
-            if f"Task '{task}'" in line or f"Subtask '{config}'" in line:
-                current_task_log.append(line)
+            if "ERROR" in line and (f"Task '{task}'" in line or (config_names[idx]!= "None" and f"Configuration '{config_names[idx]}'" in line)):
+                errors.append(line.strip())
+                success = False
+            elif "WARNING" in line and (f"Task '{task}'" in line or (config_names[idx]!= "None" and f"Configuration '{config_names[idx]}'" in line)):
+                warnings.append(line.strip())
 
-                # Capture warnings relevant to the task
-                if "WARNING" in line and "Could not find element with locator" not in line:
-                    if line.strip() not in logged_warnings:
-                        function_log.append("    WARNING: " + line.strip() + "\n")
-                        logged_warnings.add(line.strip())
-                        task_warning_found = True
-
-                # Capture any error for the task
-                if "ERROR" in line:
-                    function_log.append("    ERROR: " + line.strip() + "\n")
-                    task_error_found = True  # Mark an error was found
-
-                # Capture success message only if no prior errors for the task
-                if f"Task '{task}' with Subtask '{config}' executed successfully" in line:
-                    if not task_error_found:
-                        function_log.append("    SUCCESS: " + line.strip() + "\n")
-                        task_success_found = True
-
-        # Finalize task status in the functional log
-        if task_error_found:
-            function_log.append(f"    FAILED: Task '{task}' did not execute successfully due to errors.\n")
-        elif task_warning_found:
-            function_log.append(f"    SUCCESS: Task '{task}' executed successfully with warnings.\n")
-        elif task_success_found:
-            function_log.append(f"    PASSED: Task '{task}' executed successfully with no warnings or errors.\n")
-        else:
-            function_log.append(f"    ERROR: Task '{task}' did not execute successfully.\n")
+        if success and not warnings:
+            function_log.append("    SUCCESS: Task executed successfully.\n")
+        elif not success:
+            function_log.append("    ERROR: Task encountered errors:\n")
+            for error in errors:
+                function_log.append(f"      - {error}\n")
+        if warnings:
+            function_log.append("    WARNING: Task encountered warnings:\n")
+            for warning in warnings:
+                function_log.append(f"      - {warning}\n")
 
     # Write the structured log to a new file
     output_file = "../Logs/functional_log.txt"
@@ -77,4 +51,4 @@ def functional_log_maker():
         for entry in function_log:
             file.write(entry)
 
-functional_log_maker()
+functional_log_maker("../Input/input_data.xlsx")

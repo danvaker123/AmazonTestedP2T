@@ -1,0 +1,117 @@
+2024-12-09 12:17:02,602 | INFO | Automation process started.
+2024-12-09 12:17:14,500 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com
+2024-12-09 12:17:19,571 | INFO | Clicked element with locator 'userid'
+2024-12-09 12:17:19,647 | INFO | Sent keys to element with locator 'userid': Casey.Brown
+2024-12-09 12:17:19,711 | INFO | Clicked element with locator 'password'
+2024-12-09 12:17:19,763 | INFO | Sent keys to element with locator 'password': u^5X#rP6
+2024-12-09 12:17:32,871 | INFO | Clicked element with locator 'btnActive'
+2024-12-09 12:17:32,871 | INFO | Waiting for 10 seconds...
+2024-12-09 12:17:42,939 | INFO | Clicked element with locator 'pt1:_UIScmil3u'
+2024-12-09 12:17:42,939 | INFO | Waiting for 5 seconds...
+2024-12-09 12:17:51,342 | INFO | Clicked element with locator 'pt1:_UIScmi4'
+2024-12-09 12:17:51,342 | INFO | Waiting for 10 seconds...
+2024-12-09 12:18:01,420 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+2024-12-09 12:18:01,420 | INFO | Waiting for 5 seconds...
+2024-12-09 12:18:06,478 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+2024-12-09 12:18:06,479 | INFO | Waiting for 5 seconds...
+2024-12-09 12:18:11,596 | INFO | Sent keys to element with locator 'pt1:r1:0:r0:1:AP1:s9:it1::content': Manage Payment Process Profile
+2024-12-09 12:18:11,596 | INFO | Waiting for 5 seconds...
+2024-12-09 12:18:16,652 | INFO | Clicked element with locator 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+2024-12-09 12:18:16,652 | INFO | Waiting for 5 seconds...
+2024-12-09 12:18:21,714 | INFO | Clicked element with locator '//*[contains(text(), 'Manage Payment Process Profile')]'
+2024-12-09 12:18:21,715 | INFO | Waiting for 10 seconds...
+2024-12-09 12:18:31,791 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content'
+2024-12-09 12:18:31,860 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content': ANSI X12 820
+2024-12-09 12:18:31,860 | INFO | Waiting for 5 seconds...
+2024-12-09 12:18:36,962 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1::search'
+2024-12-09 12:18:36,962 | INFO | Waiting for 5 seconds...
+2024-12-09 12:18:42,096 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:AT2:_ATp:t1::db']//*[contains(text(), 'ANSI X12 820')]'
+2024-12-09 12:18:42,096 | INFO | Waiting for 10 seconds...
+2024-12-09 12:18:52,192 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:showDetailItem6::disAcr'
+2024-12-09 12:18:52,192 | INFO | Waiting for 7 seconds...
+2024-12-09 12:18:59,285 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox24::content'
+2024-12-09 12:18:59,285 | INFO | Waiting for 7 seconds...
+2024-12-09 12:19:06,362 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox25::content'
+2024-12-09 12:19:06,362 | INFO | Waiting for 7 seconds...
+2024-12-09 12:19:13,433 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:ctb3'
+2024-12-09 12:19:13,434 | INFO | Waiting for 7 seconds...
+2024-12-09 12:19:20,491 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
+2024-12-09 12:19:20,492 | INFO | Waiting for 7 seconds...
+2024-12-09 12:19:27,492 | INFO | Task 'Manage Payment Process Profile' with Subtask 'ANSI X12 820' executed successfully.
+2024-12-09 12:19:27,492 | INFO | Skipping step 1 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 2 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 3 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 4 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 5 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 6 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 7 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 6 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 8 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 9 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 10 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 11 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 12 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 13 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 14 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 15 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 16 for subtask 111. Already executed.
+2024-12-09 12:19:27,492 | INFO | Skipping step 17 for subtask 111. Already executed.
+2024-12-09 12:19:27,493 | INFO | Skipping step 18 for subtask 111. Already executed.
+2024-12-09 12:19:27,493 | INFO | Skipping step 19 for subtask 111. Already executed.
+2024-12-09 12:19:27,575 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content'
+2024-12-09 12:19:27,688 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content': BP_Training_DemoPPP
+2024-12-09 12:19:27,688 | INFO | Waiting for 5 seconds...
+2024-12-09 12:19:32,758 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1::search'
+2024-12-09 12:19:32,758 | INFO | Waiting for 5 seconds...
+2024-12-09 12:19:37,834 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:AT2:_ATp:t1::db']//*[contains(text(), 'BP_Training_DemoPPP')]'
+2024-12-09 12:19:37,834 | INFO | Waiting for 10 seconds...
+2024-12-09 12:19:47,889 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:showDetailItem6::disAcr'
+2024-12-09 12:19:47,890 | INFO | Waiting for 7 seconds...
+2024-12-09 12:19:55,019 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox24::content'
+2024-12-09 12:19:55,020 | INFO | Waiting for 7 seconds...
+2024-12-09 12:20:02,108 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox25::content'
+2024-12-09 12:20:02,108 | INFO | Waiting for 7 seconds...
+2024-12-09 12:20:09,193 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:ctb3'
+2024-12-09 12:20:09,194 | INFO | Waiting for 7 seconds...
+2024-12-09 12:20:16,260 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
+2024-12-09 12:20:16,260 | INFO | Waiting for 7 seconds...
+2024-12-09 12:20:23,261 | INFO | Task 'Manage Payment Process Profile' with Subtask 'BP_Training_DemoPPP' executed successfully.
+2024-12-09 12:20:23,261 | INFO | Skipping step 1 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 2 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 3 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 4 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 5 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 6 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 7 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 6 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 8 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 9 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 10 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 11 for subtask 111. Already executed.
+2024-12-09 12:20:23,261 | INFO | Skipping step 12 for subtask 111. Already executed.
+2024-12-09 12:20:23,262 | INFO | Skipping step 13 for subtask 111. Already executed.
+2024-12-09 12:20:23,262 | INFO | Skipping step 14 for subtask 111. Already executed.
+2024-12-09 12:20:23,262 | INFO | Skipping step 15 for subtask 111. Already executed.
+2024-12-09 12:20:23,262 | INFO | Skipping step 16 for subtask 111. Already executed.
+2024-12-09 12:20:23,262 | INFO | Skipping step 17 for subtask 111. Already executed.
+2024-12-09 12:20:23,262 | INFO | Skipping step 18 for subtask 111. Already executed.
+2024-12-09 12:20:23,262 | INFO | Skipping step 19 for subtask 111. Already executed.
+2024-12-09 12:20:23,369 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content'
+2024-12-09 12:20:23,482 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content': Bank Transfer Request
+2024-12-09 12:20:23,483 | INFO | Waiting for 5 seconds...
+2024-12-09 12:20:28,552 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1::search'
+2024-12-09 12:20:28,552 | INFO | Waiting for 5 seconds...
+2024-12-09 12:20:33,640 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:AT2:_ATp:t1::db']//*[contains(text(), 'Bank Transfer Request')]'
+2024-12-09 12:20:33,640 | INFO | Waiting for 10 seconds...
+2024-12-09 12:20:43,690 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:showDetailItem6::disAcr'
+2024-12-09 12:20:43,690 | INFO | Waiting for 7 seconds...
+2024-12-09 12:20:50,796 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox24::content'
+2024-12-09 12:20:50,796 | INFO | Waiting for 7 seconds...
+2024-12-09 12:20:57,869 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox25::content'
+2024-12-09 12:20:57,869 | INFO | Waiting for 7 seconds...
+2024-12-09 12:21:04,938 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:ctb3'
+2024-12-09 12:21:04,938 | INFO | Waiting for 7 seconds...
+2024-12-09 12:21:11,990 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
+2024-12-09 12:21:11,990 | INFO | Waiting for 7 seconds...
+2024-12-09 12:21:18,991 | INFO | Task 'Manage Payment Process Profile' with Subtask 'Bank Transfer Request' executed successfully.
+2024-12-09 12:21:21,431 | INFO | Closed the final browser.
