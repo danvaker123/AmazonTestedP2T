@@ -49,7 +49,7 @@ tasks:
           input_field: {}
         - step_no: 6
           action_type: wait
-          duration: 5
+          duration: 10
           description: Wait for the page
           input_field: {}
         - step_no: 8

@@ -1,9 +1,9 @@
 
---- Task: Manage Payment Process Profile | Configuration: ANSI X12 820 ---
-    SUCCESS: 2024-12-09 12:19:27,492 | INFO | Task 'Manage Payment Process Profile' with Subtask 'ANSI X12 820' executed successfully.
+--- Task: Manage Transmission Configurations | Configuration: Bills Receivable Config ---
+    WARNING: 2024-12-12 13:10:23,229 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
+    SUCCESS: 2024-12-12 13:10:31,366 | INFO | Task 'Manage Transmission Configurations' with Subtask 'Bills Receivable Config' executed successfully.
 
---- Task: Manage Payment Process Profile | Configuration: BP_Training_DemoPPP ---
-    SUCCESS: 2024-12-09 12:20:23,261 | INFO | Task 'Manage Payment Process Profile' with Subtask 'BP_Training_DemoPPP' executed successfully.
-
---- Task: Manage Payment Process Profile | Configuration: Bank Transfer Request ---
-    SUCCESS: 2024-12-09 12:21:18,991 | INFO | Task 'Manage Payment Process Profile' with Subtask 'Bank Transfer Request' executed successfully.
+--- Task: Manage Transmission Configurations | Configuration: SDD - Acknowledgement ---
+    WARNING: 2024-12-12 13:11:08,614 | WARNING | Skipping action 'Send Column 3 associated value' because required input value is missing.
+    WARNING: 2024-12-12 13:11:32,119 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
+    SUCCESS: 2024-12-12 13:11:40,270 | INFO | Task 'Manage Transmission Configurations' with Subtask 'SDD - Acknowledgement' executed successfully.

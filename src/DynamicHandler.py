@@ -1,4 +1,3 @@
-import argparse
 import json
 import logging
 import os
@@ -6,8 +5,9 @@ import time
 
 import openpyxl
 import pandas as pd
+import psutil
 import yaml
-from office365.runtime.auth.authentication_context import AuthenticationContext
+from office365.runtime.auth.client_credential import ClientCredential
 from office365.sharepoint.client_context import ClientContext
 from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from selenium import webdriver
@@ -17,18 +17,80 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.chrome.options import Options
 
 # Set up logging configuration
 logging.basicConfig(filename='../Logs/automation_log.txt', level=logging.INFO,
                     format='%(asctime)s | %(levelname)s | %(message)s', filemode='w')
 
 
-
-
 # Clear sheet content
 def clear_sheet(sheet):
     sheet.delete_rows(1, sheet.max_row)
+
+
+def functional_log_maker(input_file_path):
+    file_path = input_file_path
+
+    # Load Excel data to get task and configuration names
+    df = pd.read_excel(file_path)
+    task_names = df['Task Name'].to_list()
+    config_names = df['Configuration Name'].to_list()
+
+    # Define the log file path
+    log_file_path = "../Logs/automation_log.txt"
+
+    # Read the content of the log file
+    with open(log_file_path, 'r') as file:
+        content = file.readlines()
+
+    # Create a list to store structured logs
+    function_log = []
+    logged_warnings = set()
+
+    # Iterate over task and configuration pairs to process each section
+    for idx, task in enumerate(task_names):
+        # Get the configuration, and handle NaN or empty values gracefully
+        config = config_names[idx] if idx < len(config_names) else ""
+        if pd.isna(config) or config == "":
+            config = "None"
+
+        section_header = f"\n--- Task: {task} | Configuration: {config} ---\n"
+        function_log.append(section_header)
+
+        # Flags for tracking task state
+        task_error_found = False
+        task_success_found = False
+
+        # Iterate over the log content to process warnings, errors, and success messages
+        for line in content:
+            # Capture warnings relevant to the task
+            if "WARNING" in line and "Could not find element with locator" not in line:
+                if line.strip() not in logged_warnings:
+                    function_log.append("    WARNING: " + line.strip() + "\n")
+                    logged_warnings.add(line.strip())
+
+            # Capture any error for the task
+            if "ERROR" in line and (
+                    f"Task '{task}'" in line or (config != "None" and f"Configuration '{config}'" in line)):
+                function_log.append("    ERROR: " + line.strip() + "\n")
+                task_error_found = True  # Mark an error was found
+
+            # Capture success message only if no prior errors for the task
+            if f"Task '{task}' with Subtask '{config}' executed successfully" in line:
+                if not task_error_found:
+                    function_log.append("    SUCCESS: " + line.strip() + "\n")
+                    task_success_found = True
+                break  # Stop further checking after a successful execution is logged
+
+        # Finalize task status in the functional log
+        if not task_success_found and not task_error_found:
+            function_log.append(f"    ERROR: Task '{task}' did not execute successfully.\n")
+
+    # Write the structured log to a new file
+    output_file = "../Logs/functional_log.txt"
+    with open(output_file, 'w') as file:
+        for entry in function_log:
+            file.write(entry)
 
 
 # Create Excel report from changes data
@@ -464,55 +526,59 @@ def perform_action(driver, action, task_data, username=None, password=None, url=
     return output_data
 
 
-def download_from_sharepoint(site_url, username, password, sharepoint_file_path, local_file_path):
-    """Download a file from SharePoint."""
-    auth_context = AuthenticationContext(site_url)
-    if not auth_context.acquire_token_for_user(username, password):
-        raise Exception("Authentication failed")
-
-    ctx = ClientContext(site_url, auth_context)
-    sharepoint_file_url = f"{site_url}/{sharepoint_file_path}"
-    with open(local_file_path, "wb") as local_file:
-        file = ctx.web.get_file_by_server_relative_url(sharepoint_file_url)
+def download_file_from_sharepoint(site_url, client_id, client_secret, sharepoint_file_path, local_file_path):
+    ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
+    file = ctx.web.get_file_by_server_relative_url(sharepoint_file_path)
+    with open(local_file_path, 'wb') as local_file:
         file.download(local_file).execute_query()
-    print(f"File downloaded to {local_file_path}")
+    print(f"Downloaded {sharepoint_file_path} to {local_file_path}")
 
 
-def upload_to_sharepoint(site_url, username, password, local_file_path, sharepoint_file_path):
-    """Upload a file to SharePoint."""
-    auth_context = AuthenticationContext(site_url)
-    if not auth_context.acquire_token_for_user(username, password):
-        raise Exception("Authentication failed")
+# Function to upload file to SharePoint
+def upload_file_to_sharepoint(site_url, client_id, client_secret, sharepoint_file_path, local_file_path):
+    ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
+    with open(local_file_path, 'rb') as local_file:
+        file_content = local_file.read()
+    folder_path = f"/sites/{site_url.split('/')[-1]}/Shared Documents/Testing"
+    file_name = os.path.basename(local_file_path)
+    target_folder = ctx.web.get_folder_by_server_relative_url(folder_path)
+    target_file = target_folder.upload_file(file_name, file_content)
+    ctx.execute_query()
+    print(f"Uploaded {local_file_path} to {folder_path}")
 
-    ctx = ClientContext(site_url, auth_context)
-    with open(local_file_path, "rb") as local_file:
-        target_folder = ctx.web.get_folder_by_server_relative_url(os.path.dirname(sharepoint_file_path))
-        target_folder.upload_file(os.path.basename(sharepoint_file_path), local_file.read()).execute_query()
-    print(f"File uploaded to {sharepoint_file_path}")
 
 def start_browser():
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")  # Run in headless mode
-    chrome_options.add_argument("--disable-gpu")  # Disable GPU for headless mode
-    chrome_options.add_argument("--no-sandbox")  # Needed for Linux
-    chrome_options.add_argument("--disable-dev-shm-usage")  # Overcome limited resources in containerized environments
-    chrome_options.add_argument("--window-size=1920x1080")  # Set window size for screenshots or proper page rendering
-    chrome_options.add_argument("--start-maximized")  # Start maximized to handle elements correctly
+    chrome_options = webdriver.ChromeOptions()
+    # chrome_options.add_argument("--headless")  # Enable headless mode
+    chrome_options.add_argument("--no-sandbox")  # Bypass sandboxing
+    chrome_options.add_argument("--disable-dev-shm-usage")  # Reduce memory usage
+    chrome_options.add_argument("window-size=800,600")  # Smaller window size
+    chrome_options.add_argument('--disable-gpu')  # Disable GPU acceleration
+    chrome_options.add_argument('--disable-browser-side-navigation')  # Disable browser-side navigation
 
-    # Return the driver instance
-    return webdriver.Chrome(options=chrome_options)
+    logging.info("Starting browser in headless mode...")
+    try:
+        # Use the latest ChromeDriver
+        driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub', options=chrome_options)
 
-def main(input_file_path, output_file_path, sheet_name, config_file_path , username, password , url):
+        # Increase the implicit wait timeout to give the browser more time to respond
+        driver.implicitly_wait(180)  # Increased timeout
+
+        logging.info("Browser launched successfully!")
+        return driver
+    except Exception as e:
+        logging.error("Error launching browser: %s", e)
+        return None
+
+
+def main(input_file_path, output_file_path, sheet_name, config_file_path, username, password, url):
     logging.info("Automation process started.")
 
     # Load task data from Excel
     task_data = excel_to_json(input_file_path, sheet_name)
-    df_output = pd.read_excel(output_file_path)
-
     # Load configuration from YAML
     with open(config_file_path, 'r') as f:
         task_config = yaml.safe_load(f)
-
 
     # Variable to track the current browser and subtask
     current_browser = None
@@ -555,7 +621,7 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path , usern
             if current_browser is not None:
                 current_browser.quit()
                 logging.info(f"Closed browser for subtask {current_subtask_id}. Starting new subtask {subtask_id}.")
-            current_browser = webdriver.Chrome() # Start a new browser session for the new subtask
+            current_browser = webdriver.Chrome()  # Start a new browser session for the new subtask
             current_subtask_id = subtask_id  # Update current subtask ID
             is_first_run = True  # Set to True for a new subtask
 
@@ -626,95 +692,42 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path , usern
 
     # Save the formatted Excel file
     wb.save(output_file_path)
-
-    def functional_log_maker(input_file_path):
-        file_path =input_file_path
-
-        # Load Excel data to get task and configuration names
-        df = pd.read_excel(file_path)
-        task_names = df['Task Name'].to_list()
-        config_names = df['Configuration Name'].to_list()
-
-        # Define the log file path
-        log_file_path = "../Logs/automation_log.txt"
-
-        # Read the content of the log file
-        with open(log_file_path, 'r') as file:
-            content = file.readlines()
-
-        # Create a list to store structured logs
-        function_log = []
-        logged_warnings = set()
-
-        # Iterate over task and configuration pairs to process each section
-        for idx, task in enumerate(task_names):
-            # Get the configuration, and handle NaN or empty values gracefully
-            config = config_names[idx] if idx < len(config_names) else ""
-            if pd.isna(config) or config == "":
-                config = "None"
-
-            section_header = f"\n--- Task: {task} | Configuration: {config} ---\n"
-            function_log.append(section_header)
-
-            # Flags for tracking task state
-            task_error_found = False
-            task_success_found = False
-
-            # Iterate over the log content to process warnings, errors, and success messages
-            for line in content:
-                # Capture warnings relevant to the task
-                if "WARNING" in line and "Could not find element with locator" not in line:
-                    if line.strip() not in logged_warnings:
-                        function_log.append("    WARNING: " + line.strip() + "\n")
-                        logged_warnings.add(line.strip())
-
-                # Capture any error for the task
-                if "ERROR" in line and (
-                        f"Task '{task}'" in line or (config != "None" and f"Configuration '{config}'" in line)):
-                    function_log.append("    ERROR: " + line.strip() + "\n")
-                    task_error_found = True  # Mark an error was found
-
-                # Capture success message only if no prior errors for the task
-                if f"Task '{task}' with Subtask '{config}' executed successfully" in line:
-                    if not task_error_found:
-                        function_log.append("    SUCCESS: " + line.strip() + "\n")
-                        task_success_found = True
-                    break  # Stop further checking after a successful execution is logged
-
-            # Finalize task status in the functional log
-            if not task_success_found and not task_error_found:
-                function_log.append(f"    ERROR: Task '{task}' did not execute successfully.\n")
-
-        # Write the structured log to a new file
-        output_file = "../Logs/functional_log.txt"
-        with open(output_file, 'w') as file:
-            for entry in function_log:
-                file.write(entry)
     functional_log_maker(input_file_path)
 
 
-if __name__ == "__main__":
-    main('../Input/input_data.xlsx', '../Input/output_data.xlsx', 'Input Details', '../Config/config1.yaml', 'Casey.Brown','u^5X#rP6','https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com')
-    # parser = argparse.ArgumentParser(description="Automation Script Arguments")
-    # parser.add_argument("--input_file", required=True, help="Path to the input Excel file.")
-    # parser.add_argument("--sheet_name", required=True, help="Sheet name in the Excel input file.")
-    # parser.add_argument("--username", required=True, help="Automation username.")
-    # parser.add_argument("--password", required=True, help="Automation password.")
-    # parser.add_argument("--url", required=True, help="URL to be automated.")
-    #
-    # args = parser.parse_args()
-    # config_file_path = '../Config/config1.yaml'
-    # output_file_path = '../Input/output_data.xlsx'
-    #
-    #
-    #
-    # main(
-    #     input_file_path=args.input_file,
-    #     output_file_path= output_file_path,
-    #     sheet_name=args.sheet_name,
-    #     config_file_path=config_file_path,
-    #     username=args.username,
-    #     password=args.password,
-    #     url=args.url,
-    # )
+# Function to download input file from SharePoint and upload output file to SharePoint
+def run_automation_with_sharepoint():
+    # SharePoint and Azure AD credentials
+    tenant_id = '16af8cf7-eeb9-4533-a377-abac8f72cc4e'
+    client_id = 'acfdceea-7647-440b-b263-756462670cee'
+    client_secret = 'EC78Q~_i8liXcdR8MXLbMwmpAlEB3MA.51hzSb7W'
+    site_url = "https://gtus365dev.sharepoint.com/sites/TechnologySolutionsBangalore"
+    sharepoint_input_path = "/Shared Documents/Testing/input_data.xlsx"
+    sharepoint_output_path = "/Shared Documents/Testing"
 
+    # Local paths
+    local_input_path = '../Input/input_data.xlsx'
+    local_output_path = '../Input/output_data.xlsx'
+    automation_log_path = "../Logs/automation_log.txt"
+    functional_log_path = "../Logs/functional_log.txt"
+
+
+    # Download input file from SharePoint
+    download_file_from_sharepoint(site_url, client_id, client_secret, sharepoint_input_path, local_input_path)
+
+    # Run the automation script
+    main(input_file_path=local_input_path, output_file_path=local_output_path, sheet_name='Input Details',
+        config_file_path='../Config/config1.yaml', username='Casey.Brown', password='u^5X#rP6',
+        url='https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com')
+
+    # Upload output file, automation log, and functional log to SharePoint
+    if os.path.exists(local_output_path):
+        upload_file_to_sharepoint(site_url, client_id, client_secret, sharepoint_output_path, local_output_path)
+    if os.path.exists(automation_log_path):
+        upload_file_to_sharepoint(site_url, client_id, client_secret, sharepoint_output_path, automation_log_path)
+    if os.path.exists(functional_log_path):
+        upload_file_to_sharepoint(site_url, client_id, client_secret, sharepoint_output_path, functional_log_path)
+
+
+if __name__ == "__main__":
+    run_automation_with_sharepoint()

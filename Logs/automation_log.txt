@@ -1,117 +1,233 @@
-2024-12-09 12:17:02,602 | INFO | Automation process started.
-2024-12-09 12:17:14,500 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com
-2024-12-09 12:17:19,571 | INFO | Clicked element with locator 'userid'
-2024-12-09 12:17:19,647 | INFO | Sent keys to element with locator 'userid': Casey.Brown
-2024-12-09 12:17:19,711 | INFO | Clicked element with locator 'password'
-2024-12-09 12:17:19,763 | INFO | Sent keys to element with locator 'password': u^5X#rP6
-2024-12-09 12:17:32,871 | INFO | Clicked element with locator 'btnActive'
-2024-12-09 12:17:32,871 | INFO | Waiting for 10 seconds...
-2024-12-09 12:17:42,939 | INFO | Clicked element with locator 'pt1:_UIScmil3u'
-2024-12-09 12:17:42,939 | INFO | Waiting for 5 seconds...
-2024-12-09 12:17:51,342 | INFO | Clicked element with locator 'pt1:_UIScmi4'
-2024-12-09 12:17:51,342 | INFO | Waiting for 10 seconds...
-2024-12-09 12:18:01,420 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
-2024-12-09 12:18:01,420 | INFO | Waiting for 5 seconds...
-2024-12-09 12:18:06,478 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
-2024-12-09 12:18:06,479 | INFO | Waiting for 5 seconds...
-2024-12-09 12:18:11,596 | INFO | Sent keys to element with locator 'pt1:r1:0:r0:1:AP1:s9:it1::content': Manage Payment Process Profile
-2024-12-09 12:18:11,596 | INFO | Waiting for 5 seconds...
-2024-12-09 12:18:16,652 | INFO | Clicked element with locator 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
-2024-12-09 12:18:16,652 | INFO | Waiting for 5 seconds...
-2024-12-09 12:18:21,714 | INFO | Clicked element with locator '//*[contains(text(), 'Manage Payment Process Profile')]'
-2024-12-09 12:18:21,715 | INFO | Waiting for 10 seconds...
-2024-12-09 12:18:31,791 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content'
-2024-12-09 12:18:31,860 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content': ANSI X12 820
-2024-12-09 12:18:31,860 | INFO | Waiting for 5 seconds...
-2024-12-09 12:18:36,962 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1::search'
-2024-12-09 12:18:36,962 | INFO | Waiting for 5 seconds...
-2024-12-09 12:18:42,096 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:AT2:_ATp:t1::db']//*[contains(text(), 'ANSI X12 820')]'
-2024-12-09 12:18:42,096 | INFO | Waiting for 10 seconds...
-2024-12-09 12:18:52,192 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:showDetailItem6::disAcr'
-2024-12-09 12:18:52,192 | INFO | Waiting for 7 seconds...
-2024-12-09 12:18:59,285 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox24::content'
-2024-12-09 12:18:59,285 | INFO | Waiting for 7 seconds...
-2024-12-09 12:19:06,362 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox25::content'
-2024-12-09 12:19:06,362 | INFO | Waiting for 7 seconds...
-2024-12-09 12:19:13,433 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:ctb3'
-2024-12-09 12:19:13,434 | INFO | Waiting for 7 seconds...
-2024-12-09 12:19:20,491 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
-2024-12-09 12:19:20,492 | INFO | Waiting for 7 seconds...
-2024-12-09 12:19:27,492 | INFO | Task 'Manage Payment Process Profile' with Subtask 'ANSI X12 820' executed successfully.
-2024-12-09 12:19:27,492 | INFO | Skipping step 1 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 2 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 3 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 4 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 5 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 6 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 7 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 6 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 8 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 9 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 10 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 11 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 12 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 13 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 14 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 15 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 16 for subtask 111. Already executed.
-2024-12-09 12:19:27,492 | INFO | Skipping step 17 for subtask 111. Already executed.
-2024-12-09 12:19:27,493 | INFO | Skipping step 18 for subtask 111. Already executed.
-2024-12-09 12:19:27,493 | INFO | Skipping step 19 for subtask 111. Already executed.
-2024-12-09 12:19:27,575 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content'
-2024-12-09 12:19:27,688 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content': BP_Training_DemoPPP
-2024-12-09 12:19:27,688 | INFO | Waiting for 5 seconds...
-2024-12-09 12:19:32,758 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1::search'
-2024-12-09 12:19:32,758 | INFO | Waiting for 5 seconds...
-2024-12-09 12:19:37,834 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:AT2:_ATp:t1::db']//*[contains(text(), 'BP_Training_DemoPPP')]'
-2024-12-09 12:19:37,834 | INFO | Waiting for 10 seconds...
-2024-12-09 12:19:47,889 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:showDetailItem6::disAcr'
-2024-12-09 12:19:47,890 | INFO | Waiting for 7 seconds...
-2024-12-09 12:19:55,019 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox24::content'
-2024-12-09 12:19:55,020 | INFO | Waiting for 7 seconds...
-2024-12-09 12:20:02,108 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox25::content'
-2024-12-09 12:20:02,108 | INFO | Waiting for 7 seconds...
-2024-12-09 12:20:09,193 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:ctb3'
-2024-12-09 12:20:09,194 | INFO | Waiting for 7 seconds...
-2024-12-09 12:20:16,260 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
-2024-12-09 12:20:16,260 | INFO | Waiting for 7 seconds...
-2024-12-09 12:20:23,261 | INFO | Task 'Manage Payment Process Profile' with Subtask 'BP_Training_DemoPPP' executed successfully.
-2024-12-09 12:20:23,261 | INFO | Skipping step 1 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 2 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 3 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 4 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 5 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 6 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 7 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 6 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 8 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 9 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 10 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 11 for subtask 111. Already executed.
-2024-12-09 12:20:23,261 | INFO | Skipping step 12 for subtask 111. Already executed.
-2024-12-09 12:20:23,262 | INFO | Skipping step 13 for subtask 111. Already executed.
-2024-12-09 12:20:23,262 | INFO | Skipping step 14 for subtask 111. Already executed.
-2024-12-09 12:20:23,262 | INFO | Skipping step 15 for subtask 111. Already executed.
-2024-12-09 12:20:23,262 | INFO | Skipping step 16 for subtask 111. Already executed.
-2024-12-09 12:20:23,262 | INFO | Skipping step 17 for subtask 111. Already executed.
-2024-12-09 12:20:23,262 | INFO | Skipping step 18 for subtask 111. Already executed.
-2024-12-09 12:20:23,262 | INFO | Skipping step 19 for subtask 111. Already executed.
-2024-12-09 12:20:23,369 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content'
-2024-12-09 12:20:23,482 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1:value00::content': Bank Transfer Request
-2024-12-09 12:20:23,483 | INFO | Waiting for 5 seconds...
-2024-12-09 12:20:28,552 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:q1::search'
-2024-12-09 12:20:28,552 | INFO | Waiting for 5 seconds...
-2024-12-09 12:20:33,640 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:0:AP1:AT2:_ATp:t1::db']//*[contains(text(), 'Bank Transfer Request')]'
-2024-12-09 12:20:33,640 | INFO | Waiting for 10 seconds...
-2024-12-09 12:20:43,690 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:showDetailItem6::disAcr'
-2024-12-09 12:20:43,690 | INFO | Waiting for 7 seconds...
-2024-12-09 12:20:50,796 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox24::content'
-2024-12-09 12:20:50,796 | INFO | Waiting for 7 seconds...
-2024-12-09 12:20:57,869 | INFO | Unchecked the checkbox using the label for locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:selectBooleanCheckbox25::content'
-2024-12-09 12:20:57,869 | INFO | Waiting for 7 seconds...
-2024-12-09 12:21:04,938 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:pt_r1:1:ap1:ctb3'
-2024-12-09 12:21:04,938 | INFO | Waiting for 7 seconds...
-2024-12-09 12:21:11,990 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
-2024-12-09 12:21:11,990 | INFO | Waiting for 7 seconds...
-2024-12-09 12:21:18,991 | INFO | Task 'Manage Payment Process Profile' with Subtask 'Bank Transfer Request' executed successfully.
-2024-12-09 12:21:21,431 | INFO | Closed the final browser.
+2024-12-12 13:08:12,202 | INFO | Automation process started.
+2024-12-12 13:08:21,751 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com
+2024-12-12 13:08:26,810 | INFO | Clicked element with locator 'userid'
+2024-12-12 13:08:26,863 | INFO | Sent keys to element with locator 'userid': Casey.Brown
+2024-12-12 13:08:26,909 | INFO | Clicked element with locator 'password'
+2024-12-12 13:08:26,946 | INFO | Sent keys to element with locator 'password': u^5X#rP6
+2024-12-12 13:08:43,909 | INFO | Clicked element with locator 'btnActive'
+2024-12-12 13:08:43,909 | INFO | Waiting for 10 seconds...
+2024-12-12 13:08:53,983 | INFO | Clicked element with locator 'pt1:_UIScmil3u'
+2024-12-12 13:08:53,984 | INFO | Waiting for 10 seconds...
+2024-12-12 13:09:07,507 | INFO | Clicked element with locator 'pt1:_UIScmi4'
+2024-12-12 13:09:07,507 | INFO | Waiting for 10 seconds...
+2024-12-12 13:09:17,573 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+2024-12-12 13:09:17,573 | INFO | Waiting for 5 seconds...
+2024-12-12 13:09:22,641 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+2024-12-12 13:09:22,642 | INFO | Waiting for 5 seconds...
+2024-12-12 13:09:27,747 | INFO | Sent keys to element with locator 'pt1:r1:0:r0:1:AP1:s9:it1::content': Manage Transmission Configurations
+2024-12-12 13:09:27,748 | INFO | Waiting for 5 seconds...
+2024-12-12 13:09:32,807 | INFO | Clicked element with locator 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+2024-12-12 13:09:32,807 | INFO | Waiting for 5 seconds...
+2024-12-12 13:09:37,870 | INFO | Clicked element with locator '//*[contains(text(), 'Manage Transmission Configurations')]'
+2024-12-12 13:09:37,870 | INFO | Waiting for 5 seconds...
+2024-12-12 13:09:42,929 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content'
+2024-12-12 13:09:42,994 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content': Bills Receivable Config
+2024-12-12 13:09:43,057 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1::search'
+2024-12-12 13:09:43,057 | INFO | Waiting for 5 seconds...
+2024-12-12 13:09:48,135 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(), 'Bills Receivable Config')]'
+2024-12-12 13:09:48,135 | INFO | Waiting for 5 seconds...
+2024-12-12 13:09:53,213 | INFO | Clicked element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']'
+2024-12-12 13:09:53,226 | INFO | Retrieved value from element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']': nksnnslnslk
+2024-12-12 13:09:53,292 | INFO | Sent keys to element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']': snflsnlfnslnslnl
+2024-12-12 13:09:53,292 | INFO | Waiting for 3 seconds...
+2024-12-12 13:09:56,366 | INFO | Clicked element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']'
+2024-12-12 13:09:56,381 | INFO | Retrieved value from element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']': fosfjsnlksn
+2024-12-12 13:09:56,450 | INFO | Sent keys to element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']': nskofnsknsokfnskonm
+2024-12-12 13:09:56,450 | INFO | Waiting for 3 seconds...
+2024-12-12 13:09:59,521 | INFO | Clicked element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']'
+2024-12-12 13:09:59,538 | INFO | Retrieved value from element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']': onsokdnlskn
+2024-12-12 13:09:59,598 | INFO | Sent keys to element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']': fklsnklsndlksn
+2024-12-12 13:09:59,598 | INFO | Waiting for 3 seconds...
+2024-12-12 13:10:12,915 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F3A91BE]
+	(No symbol) [0x00007FF78F3A94AC]
+	(No symbol) [0x00007FF78F3F2647]
+	(No symbol) [0x00007FF78F3CF33F]
+	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:10:23,229 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F3A91BE]
+	(No symbol) [0x00007FF78F3A94AC]
+	(No symbol) [0x00007FF78F3F2647]
+	(No symbol) [0x00007FF78F3CF33F]
+	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:10:23,229 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
+2024-12-12 13:10:23,229 | INFO | Waiting for 3 seconds...
+2024-12-12 13:10:26,303 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:1:AP1:APscl2'
+2024-12-12 13:10:26,303 | INFO | Waiting for 5 seconds...
+2024-12-12 13:10:31,366 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
+2024-12-12 13:10:31,366 | INFO | Task 'Manage Transmission Configurations' with Subtask 'Bills Receivable Config' executed successfully.
+2024-12-12 13:10:31,366 | INFO | Skipping step 1 for subtask 101. Already executed.
+2024-12-12 13:10:31,366 | INFO | Skipping step 2 for subtask 101. Already executed.
+2024-12-12 13:10:31,366 | INFO | Skipping step 3 for subtask 101. Already executed.
+2024-12-12 13:10:31,366 | INFO | Skipping step 4 for subtask 101. Already executed.
+2024-12-12 13:10:31,366 | INFO | Skipping step 5 for subtask 101. Already executed.
+2024-12-12 13:10:31,366 | INFO | Skipping step 6 for subtask 101. Already executed.
+2024-12-12 13:10:31,366 | INFO | Skipping step 7 for subtask 101. Already executed.
+2024-12-12 13:10:31,366 | INFO | Skipping step 6 for subtask 101. Already executed.
+2024-12-12 13:10:31,366 | INFO | Skipping step 8 for subtask 101. Already executed.
+2024-12-12 13:10:31,366 | INFO | Skipping step 9 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 10 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 11 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 12 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 13 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 14 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 15 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 16 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 17 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 18 for subtask 101. Already executed.
+2024-12-12 13:10:31,367 | INFO | Skipping step 19 for subtask 101. Already executed.
+2024-12-12 13:10:31,428 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content'
+2024-12-12 13:10:31,498 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content': SDD - Acknowledgement
+2024-12-12 13:10:31,562 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1::search'
+2024-12-12 13:10:31,562 | INFO | Waiting for 5 seconds...
+2024-12-12 13:10:36,631 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(), 'SDD - Acknowledgement')]'
+2024-12-12 13:10:36,631 | INFO | Waiting for 5 seconds...
+2024-12-12 13:10:41,711 | INFO | Clicked element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']'
+2024-12-12 13:10:41,726 | INFO | Retrieved value from element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']': jdkonsodnosndoks
+2024-12-12 13:10:41,805 | INFO | Sent keys to element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']': oshfosfonsofno
+2024-12-12 13:10:41,805 | INFO | Waiting for 3 seconds...
+2024-12-12 13:10:44,927 | INFO | Clicked element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']'
+2024-12-12 13:10:44,943 | INFO | Retrieved value from element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']': nlskndlsnlkd
+2024-12-12 13:10:45,041 | INFO | Sent keys to element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']': okdoksndonso
+2024-12-12 13:10:45,041 | INFO | Waiting for 3 seconds...
+2024-12-12 13:10:58,314 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F3A91BE]
+	(No symbol) [0x00007FF78F3A94AC]
+	(No symbol) [0x00007FF78F3F2647]
+	(No symbol) [0x00007FF78F3CF33F]
+	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:11:08,614 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F3A91BE]
+	(No symbol) [0x00007FF78F3A94AC]
+	(No symbol) [0x00007FF78F3F2647]
+	(No symbol) [0x00007FF78F3CF33F]
+	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:11:08,614 | WARNING | Skipping action 'Send Column 3 associated value' because required input value is missing.
+2024-12-12 13:11:08,614 | INFO | Waiting for 3 seconds...
+2024-12-12 13:11:21,841 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F3A91BE]
+	(No symbol) [0x00007FF78F3A94AC]
+	(No symbol) [0x00007FF78F3F2647]
+	(No symbol) [0x00007FF78F3CF33F]
+	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:11:32,119 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F3A91BE]
+	(No symbol) [0x00007FF78F3A94AC]
+	(No symbol) [0x00007FF78F3F2647]
+	(No symbol) [0x00007FF78F3CF33F]
+	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:11:32,119 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
+2024-12-12 13:11:32,119 | INFO | Waiting for 3 seconds...
+2024-12-12 13:11:35,193 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:1:AP1:APscl2'
+2024-12-12 13:11:35,193 | INFO | Waiting for 5 seconds...
+2024-12-12 13:11:40,270 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
+2024-12-12 13:11:40,270 | INFO | Task 'Manage Transmission Configurations' with Subtask 'SDD - Acknowledgement' executed successfully.
+2024-12-12 13:11:42,695 | INFO | Closed the final browser.
