@@ -1,7 +1,9 @@
+import argparse
 import json
 import logging
 import os
 import time
+from getpass import getpass
 
 import openpyxl
 import pandas as pd
@@ -696,7 +698,7 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path, userna
 
 
 # Function to download input file from SharePoint and upload output file to SharePoint
-def run_automation_with_sharepoint():
+def run_automation_with_sharepoint(url , username, password):
     # SharePoint and Azure AD credentials
     tenant_id = '16af8cf7-eeb9-4533-a377-abac8f72cc4e'
     client_id = 'acfdceea-7647-440b-b263-756462670cee'
@@ -717,8 +719,8 @@ def run_automation_with_sharepoint():
 
     # Run the automation script
     main(input_file_path=local_input_path, output_file_path=local_output_path, sheet_name='Input Details',
-        config_file_path='../Config/config1.yaml', username='Casey.Brown', password='u^5X#rP6',
-        url='https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com')
+        config_file_path='../Config/config1.yaml', username=username, password=password,
+        url=url)
 
     # Upload output file, automation log, and functional log to SharePoint
     if os.path.exists(local_output_path):
@@ -730,4 +732,9 @@ def run_automation_with_sharepoint():
 
 
 if __name__ == "__main__":
-    run_automation_with_sharepoint()
+    parser = argparse.ArgumentParser(description="Automation Script Arguments")
+    parser.add_argument("--url", required=True, help="URL to be automated.")
+    parser.add_argument("--username", required=True, help="Automation username.")
+    parser.add_argument("--password", required=True, help="Automation username.")
+    args = parser.parse_args()
+    run_automation_with_sharepoint(args.url, args.username, args.password)

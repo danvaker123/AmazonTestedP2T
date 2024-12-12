@@ -1,53 +1,21 @@
-2024-12-12 13:08:12,202 | INFO | Automation process started.
-2024-12-12 13:08:21,751 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com
-2024-12-12 13:08:26,810 | INFO | Clicked element with locator 'userid'
-2024-12-12 13:08:26,863 | INFO | Sent keys to element with locator 'userid': Casey.Brown
-2024-12-12 13:08:26,909 | INFO | Clicked element with locator 'password'
-2024-12-12 13:08:26,946 | INFO | Sent keys to element with locator 'password': u^5X#rP6
-2024-12-12 13:08:43,909 | INFO | Clicked element with locator 'btnActive'
-2024-12-12 13:08:43,909 | INFO | Waiting for 10 seconds...
-2024-12-12 13:08:53,983 | INFO | Clicked element with locator 'pt1:_UIScmil3u'
-2024-12-12 13:08:53,984 | INFO | Waiting for 10 seconds...
-2024-12-12 13:09:07,507 | INFO | Clicked element with locator 'pt1:_UIScmi4'
-2024-12-12 13:09:07,507 | INFO | Waiting for 10 seconds...
-2024-12-12 13:09:17,573 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
-2024-12-12 13:09:17,573 | INFO | Waiting for 5 seconds...
-2024-12-12 13:09:22,641 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
-2024-12-12 13:09:22,642 | INFO | Waiting for 5 seconds...
-2024-12-12 13:09:27,747 | INFO | Sent keys to element with locator 'pt1:r1:0:r0:1:AP1:s9:it1::content': Manage Transmission Configurations
-2024-12-12 13:09:27,748 | INFO | Waiting for 5 seconds...
-2024-12-12 13:09:32,807 | INFO | Clicked element with locator 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
-2024-12-12 13:09:32,807 | INFO | Waiting for 5 seconds...
-2024-12-12 13:09:37,870 | INFO | Clicked element with locator '//*[contains(text(), 'Manage Transmission Configurations')]'
-2024-12-12 13:09:37,870 | INFO | Waiting for 5 seconds...
-2024-12-12 13:09:42,929 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content'
-2024-12-12 13:09:42,994 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content': Bills Receivable Config
-2024-12-12 13:09:43,057 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1::search'
-2024-12-12 13:09:43,057 | INFO | Waiting for 5 seconds...
-2024-12-12 13:09:48,135 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(), 'Bills Receivable Config')]'
-2024-12-12 13:09:48,135 | INFO | Waiting for 5 seconds...
-2024-12-12 13:09:53,213 | INFO | Clicked element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']'
-2024-12-12 13:09:53,226 | INFO | Retrieved value from element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']': nksnnslnslk
-2024-12-12 13:09:53,292 | INFO | Sent keys to element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']': snflsnlfnslnslnl
-2024-12-12 13:09:53,292 | INFO | Waiting for 3 seconds...
-2024-12-12 13:09:56,366 | INFO | Clicked element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']'
-2024-12-12 13:09:56,381 | INFO | Retrieved value from element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']': fosfjsnlksn
-2024-12-12 13:09:56,450 | INFO | Sent keys to element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']': nskofnsknsokfnskonm
-2024-12-12 13:09:56,450 | INFO | Waiting for 3 seconds...
-2024-12-12 13:09:59,521 | INFO | Clicked element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']'
-2024-12-12 13:09:59,538 | INFO | Retrieved value from element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']': onsokdnlskn
-2024-12-12 13:09:59,598 | INFO | Sent keys to element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']': fklsnklsndlksn
-2024-12-12 13:09:59,598 | INFO | Waiting for 3 seconds...
-2024-12-12 13:10:12,915 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+2024-12-12 13:52:20,489 | INFO | Automation process started.
+2024-12-12 13:52:30,861 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com
+2024-12-12 13:52:35,925 | INFO | Clicked element with locator 'userid'
+2024-12-12 13:52:35,976 | INFO | Sent keys to element with locator 'userid': Casey.Brown
+2024-12-12 13:52:36,036 | INFO | Clicked element with locator 'password'
+2024-12-12 13:52:36,082 | INFO | Sent keys to element with locator 'password': u\5X\#rP6
+2024-12-12 13:52:36,497 | INFO | Clicked element with locator 'btnActive'
+2024-12-12 13:52:36,498 | INFO | Waiting for 10 seconds...
+2024-12-12 13:52:46,500 | WARNING | Could not find element with locator 'pt1:_UIScmil3u': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
 Stacktrace:
 	GetHandleVerifier [0x00007FF78F546CC5+28821]
 	(No symbol) [0x00007FF78F4B3850]
 	(No symbol) [0x00007FF78F35578A]
-	(No symbol) [0x00007FF78F3A91BE]
-	(No symbol) [0x00007FF78F3A94AC]
-	(No symbol) [0x00007FF78F3F2647]
-	(No symbol) [0x00007FF78F3CF33F]
-	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
 	(No symbol) [0x00007FF78F3CF0A3]
 	(No symbol) [0x00007FF78F39A778]
 	(No symbol) [0x00007FF78F39B8E1]
@@ -62,16 +30,17 @@ Stacktrace:
 	BaseThreadInitThunk [0x00007FFB28067374+20]
 	RtlUserThreadStart [0x00007FFB2885CC91+33]
 
-2024-12-12 13:10:23,229 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+2024-12-12 13:52:46,500 | INFO | Waiting for 10 seconds...
+2024-12-12 13:52:56,502 | WARNING | Could not find element with locator 'pt1:_UIScmi4': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
 Stacktrace:
 	GetHandleVerifier [0x00007FF78F546CC5+28821]
 	(No symbol) [0x00007FF78F4B3850]
 	(No symbol) [0x00007FF78F35578A]
-	(No symbol) [0x00007FF78F3A91BE]
-	(No symbol) [0x00007FF78F3A94AC]
-	(No symbol) [0x00007FF78F3F2647]
-	(No symbol) [0x00007FF78F3CF33F]
-	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
 	(No symbol) [0x00007FF78F3CF0A3]
 	(No symbol) [0x00007FF78F39A778]
 	(No symbol) [0x00007FF78F39B8E1]
@@ -86,56 +55,17 @@ Stacktrace:
 	BaseThreadInitThunk [0x00007FFB28067374+20]
 	RtlUserThreadStart [0x00007FFB2885CC91+33]
 
-2024-12-12 13:10:23,229 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
-2024-12-12 13:10:23,229 | INFO | Waiting for 3 seconds...
-2024-12-12 13:10:26,303 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:1:AP1:APscl2'
-2024-12-12 13:10:26,303 | INFO | Waiting for 5 seconds...
-2024-12-12 13:10:31,366 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
-2024-12-12 13:10:31,366 | INFO | Task 'Manage Transmission Configurations' with Subtask 'Bills Receivable Config' executed successfully.
-2024-12-12 13:10:31,366 | INFO | Skipping step 1 for subtask 101. Already executed.
-2024-12-12 13:10:31,366 | INFO | Skipping step 2 for subtask 101. Already executed.
-2024-12-12 13:10:31,366 | INFO | Skipping step 3 for subtask 101. Already executed.
-2024-12-12 13:10:31,366 | INFO | Skipping step 4 for subtask 101. Already executed.
-2024-12-12 13:10:31,366 | INFO | Skipping step 5 for subtask 101. Already executed.
-2024-12-12 13:10:31,366 | INFO | Skipping step 6 for subtask 101. Already executed.
-2024-12-12 13:10:31,366 | INFO | Skipping step 7 for subtask 101. Already executed.
-2024-12-12 13:10:31,366 | INFO | Skipping step 6 for subtask 101. Already executed.
-2024-12-12 13:10:31,366 | INFO | Skipping step 8 for subtask 101. Already executed.
-2024-12-12 13:10:31,366 | INFO | Skipping step 9 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 10 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 11 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 12 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 13 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 14 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 15 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 16 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 17 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 18 for subtask 101. Already executed.
-2024-12-12 13:10:31,367 | INFO | Skipping step 19 for subtask 101. Already executed.
-2024-12-12 13:10:31,428 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content'
-2024-12-12 13:10:31,498 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content': SDD - Acknowledgement
-2024-12-12 13:10:31,562 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1::search'
-2024-12-12 13:10:31,562 | INFO | Waiting for 5 seconds...
-2024-12-12 13:10:36,631 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(), 'SDD - Acknowledgement')]'
-2024-12-12 13:10:36,631 | INFO | Waiting for 5 seconds...
-2024-12-12 13:10:41,711 | INFO | Clicked element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']'
-2024-12-12 13:10:41,726 | INFO | Retrieved value from element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']': jdkonsodnosndoks
-2024-12-12 13:10:41,805 | INFO | Sent keys to element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']': oshfosfonsofno
-2024-12-12 13:10:41,805 | INFO | Waiting for 3 seconds...
-2024-12-12 13:10:44,927 | INFO | Clicked element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']'
-2024-12-12 13:10:44,943 | INFO | Retrieved value from element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']': nlskndlsnlkd
-2024-12-12 13:10:45,041 | INFO | Sent keys to element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']': okdoksndonso
-2024-12-12 13:10:45,041 | INFO | Waiting for 3 seconds...
-2024-12-12 13:10:58,314 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+2024-12-12 13:52:56,502 | INFO | Waiting for 10 seconds...
+2024-12-12 13:53:06,504 | WARNING | Could not find element with locator 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
 Stacktrace:
 	GetHandleVerifier [0x00007FF78F546CC5+28821]
 	(No symbol) [0x00007FF78F4B3850]
 	(No symbol) [0x00007FF78F35578A]
-	(No symbol) [0x00007FF78F3A91BE]
-	(No symbol) [0x00007FF78F3A94AC]
-	(No symbol) [0x00007FF78F3F2647]
-	(No symbol) [0x00007FF78F3CF33F]
-	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
 	(No symbol) [0x00007FF78F3CF0A3]
 	(No symbol) [0x00007FF78F39A778]
 	(No symbol) [0x00007FF78F39B8E1]
@@ -150,16 +80,17 @@ Stacktrace:
 	BaseThreadInitThunk [0x00007FFB28067374+20]
 	RtlUserThreadStart [0x00007FFB2885CC91+33]
 
-2024-12-12 13:11:08,614 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+2024-12-12 13:53:06,504 | INFO | Waiting for 5 seconds...
+2024-12-12 13:53:11,506 | WARNING | Could not find element with locator 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
 Stacktrace:
 	GetHandleVerifier [0x00007FF78F546CC5+28821]
 	(No symbol) [0x00007FF78F4B3850]
 	(No symbol) [0x00007FF78F35578A]
-	(No symbol) [0x00007FF78F3A91BE]
-	(No symbol) [0x00007FF78F3A94AC]
-	(No symbol) [0x00007FF78F3F2647]
-	(No symbol) [0x00007FF78F3CF33F]
-	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
 	(No symbol) [0x00007FF78F3CF0A3]
 	(No symbol) [0x00007FF78F39A778]
 	(No symbol) [0x00007FF78F39B8E1]
@@ -174,18 +105,17 @@ Stacktrace:
 	BaseThreadInitThunk [0x00007FFB28067374+20]
 	RtlUserThreadStart [0x00007FFB2885CC91+33]
 
-2024-12-12 13:11:08,614 | WARNING | Skipping action 'Send Column 3 associated value' because required input value is missing.
-2024-12-12 13:11:08,614 | INFO | Waiting for 3 seconds...
-2024-12-12 13:11:21,841 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+2024-12-12 13:53:11,506 | INFO | Waiting for 5 seconds...
+2024-12-12 13:53:16,510 | WARNING | Could not find element with locator 'pt1:r1:0:r0:1:AP1:s9:it1::content': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
 Stacktrace:
 	GetHandleVerifier [0x00007FF78F546CC5+28821]
 	(No symbol) [0x00007FF78F4B3850]
 	(No symbol) [0x00007FF78F35578A]
-	(No symbol) [0x00007FF78F3A91BE]
-	(No symbol) [0x00007FF78F3A94AC]
-	(No symbol) [0x00007FF78F3F2647]
-	(No symbol) [0x00007FF78F3CF33F]
-	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
 	(No symbol) [0x00007FF78F3CF0A3]
 	(No symbol) [0x00007FF78F39A778]
 	(No symbol) [0x00007FF78F39B8E1]
@@ -200,16 +130,17 @@ Stacktrace:
 	BaseThreadInitThunk [0x00007FFB28067374+20]
 	RtlUserThreadStart [0x00007FFB2885CC91+33]
 
-2024-12-12 13:11:32,119 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+2024-12-12 13:53:16,510 | INFO | Waiting for 5 seconds...
+2024-12-12 13:53:21,512 | WARNING | Could not find element with locator 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
 Stacktrace:
 	GetHandleVerifier [0x00007FF78F546CC5+28821]
 	(No symbol) [0x00007FF78F4B3850]
 	(No symbol) [0x00007FF78F35578A]
-	(No symbol) [0x00007FF78F3A91BE]
-	(No symbol) [0x00007FF78F3A94AC]
-	(No symbol) [0x00007FF78F3F2647]
-	(No symbol) [0x00007FF78F3CF33F]
-	(No symbol) [0x00007FF78F3EF412]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
 	(No symbol) [0x00007FF78F3CF0A3]
 	(No symbol) [0x00007FF78F39A778]
 	(No symbol) [0x00007FF78F39B8E1]
@@ -224,10 +155,421 @@ Stacktrace:
 	BaseThreadInitThunk [0x00007FFB28067374+20]
 	RtlUserThreadStart [0x00007FFB2885CC91+33]
 
-2024-12-12 13:11:32,119 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
-2024-12-12 13:11:32,119 | INFO | Waiting for 3 seconds...
-2024-12-12 13:11:35,193 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:1:AP1:APscl2'
-2024-12-12 13:11:35,193 | INFO | Waiting for 5 seconds...
-2024-12-12 13:11:40,270 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
-2024-12-12 13:11:40,270 | INFO | Task 'Manage Transmission Configurations' with Subtask 'SDD - Acknowledgement' executed successfully.
-2024-12-12 13:11:42,695 | INFO | Closed the final browser.
+2024-12-12 13:53:21,512 | INFO | Waiting for 5 seconds...
+2024-12-12 13:53:26,514 | WARNING | Could not find element with locator '//*[contains(text(), 'Manage Transmission Configurations')]': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:26,514 | INFO | Waiting for 5 seconds...
+2024-12-12 13:53:31,516 | WARNING | Could not find element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:31,518 | WARNING | Could not find element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:31,520 | WARNING | Could not find element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1::search': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:31,520 | INFO | Waiting for 5 seconds...
+2024-12-12 13:53:36,524 | WARNING | Could not find element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(), 'Bills Receivable Config')]': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:36,524 | INFO | Waiting for 5 seconds...
+2024-12-12 13:53:41,525 | WARNING | Could not find element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:41,525 | WARNING | Could not find element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:41,525 | WARNING | Could not find element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:41,525 | INFO | Waiting for 3 seconds...
+2024-12-12 13:53:44,530 | WARNING | Could not find element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:44,531 | WARNING | Could not find element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:44,532 | WARNING | Could not find element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:44,532 | INFO | Waiting for 3 seconds...
+2024-12-12 13:53:47,535 | WARNING | Could not find element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:47,535 | WARNING | Could not find element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:47,537 | WARNING | Could not find element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:47,537 | INFO | Waiting for 3 seconds...
+2024-12-12 13:53:50,539 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:50,540 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:50,540 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
+2024-12-12 13:53:50,541 | INFO | Waiting for 3 seconds...
+2024-12-12 13:53:53,543 | WARNING | Could not find element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:1:AP1:APscl2': Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.109)
+Stacktrace:
+	GetHandleVerifier [0x00007FF78F546CC5+28821]
+	(No symbol) [0x00007FF78F4B3850]
+	(No symbol) [0x00007FF78F35578A]
+	(No symbol) [0x00007FF78F32F4F5]
+	(No symbol) [0x00007FF78F3D6247]
+	(No symbol) [0x00007FF78F3EECE2]
+	(No symbol) [0x00007FF78F3CF0A3]
+	(No symbol) [0x00007FF78F39A778]
+	(No symbol) [0x00007FF78F39B8E1]
+	GetHandleVerifier [0x00007FF78F87FCCD+3408029]
+	GetHandleVerifier [0x00007FF78F89743F+3504143]
+	GetHandleVerifier [0x00007FF78F88B61D+3455469]
+	GetHandleVerifier [0x00007FF78F60BDCB+835995]
+	(No symbol) [0x00007FF78F4BEB6F]
+	(No symbol) [0x00007FF78F4BA824]
+	(No symbol) [0x00007FF78F4BA9BD]
+	(No symbol) [0x00007FF78F4AA1A9]
+	BaseThreadInitThunk [0x00007FFB28067374+20]
+	RtlUserThreadStart [0x00007FFB2885CC91+33]
+
+2024-12-12 13:53:53,543 | INFO | Waiting for 5 seconds...
