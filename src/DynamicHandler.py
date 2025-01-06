@@ -1,13 +1,12 @@
-import argparse
+import argparse as args
 import json
-import logging
 import os
 import time
-from getpass import getpass
-
+import logging
+import argparse
+import chromedriver_autoinstaller
 import openpyxl
 import pandas as pd
-import psutil
 import yaml
 from office365.runtime.auth.client_credential import ClientCredential
 from office365.sharepoint.client_context import ClientContext
@@ -15,6 +14,7 @@ from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from selenium import webdriver
 from selenium.common import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 from selenium.webdriver import Keys
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
@@ -550,27 +550,26 @@ def upload_file_to_sharepoint(site_url, client_id, client_secret, sharepoint_fil
 
 
 def start_browser():
-    chrome_options = webdriver.ChromeOptions()
-    # chrome_options.add_argument("--headless")  # Enable headless mode
-    chrome_options.add_argument("--no-sandbox")  # Bypass sandboxing
-    chrome_options.add_argument("--disable-dev-shm-usage")  # Reduce memory usage
-    chrome_options.add_argument("window-size=800,600")  # Smaller window size
-    chrome_options.add_argument('--disable-gpu')  # Disable GPU acceleration
-    chrome_options.add_argument('--disable-browser-side-navigation')  # Disable browser-side navigation
+    # Install the correct version of chromedriver automatically
+    chromedriver_autoinstaller.install()
 
-    logging.info("Starting browser in headless mode...")
+    # Set up Chrome options
+    options = Options()
+    # options.add_argument("--headless")  # Uncomment if you want headless mode
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+
+    # Uncomment the following line to specify the binary location explicitly if needed
+    # options.binary_location = "/usr/bin/google-chrome"  # Adjust the path if needed
+
     try:
-        # Use the latest ChromeDriver
-        driver = webdriver.Remote(command_executor='http://localhost:4444/wd/hub', options=chrome_options)
-
-        # Increase the implicit wait timeout to give the browser more time to respond
-        driver.implicitly_wait(180)  # Increased timeout
-
-        logging.info("Browser launched successfully!")
+        # Start Chrome WebDriver
+        driver = webdriver.Chrome(options=options)
+        logging.info("Browser started successfully.")
         return driver
     except Exception as e:
-        logging.error("Error launching browser: %s", e)
-        return None
+        logging.error(f"Error starting the browser: {e}")
+        raise
 
 
 def main(input_file_path, output_file_path, sheet_name, config_file_path, username, password, url):
@@ -623,7 +622,7 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path, userna
             if current_browser is not None:
                 current_browser.quit()
                 logging.info(f"Closed browser for subtask {current_subtask_id}. Starting new subtask {subtask_id}.")
-            current_browser = webdriver.Chrome()  # Start a new browser session for the new subtask
+            current_browser = start_browser()  # Start a new browser session for the new subtask
             current_subtask_id = subtask_id  # Update current subtask ID
             is_first_run = True  # Set to True for a new subtask
 
@@ -698,7 +697,7 @@ def main(input_file_path, output_file_path, sheet_name, config_file_path, userna
 
 
 # Function to download input file from SharePoint and upload output file to SharePoint
-def run_automation_with_sharepoint(url , username, password):
+def run_automation_with_sharepoint(url, username, password):
     # SharePoint and Azure AD credentials
     tenant_id = '16af8cf7-eeb9-4533-a377-abac8f72cc4e'
     client_id = 'acfdceea-7647-440b-b263-756462670cee'
@@ -713,14 +712,12 @@ def run_automation_with_sharepoint(url , username, password):
     automation_log_path = "../Logs/automation_log.txt"
     functional_log_path = "../Logs/functional_log.txt"
 
-
     # Download input file from SharePoint
     download_file_from_sharepoint(site_url, client_id, client_secret, sharepoint_input_path, local_input_path)
 
     # Run the automation script
     main(input_file_path=local_input_path, output_file_path=local_output_path, sheet_name='Input Details',
-        config_file_path='../Config/config1.yaml', username=username, password=password,
-        url=url)
+         config_file_path='../Config/config1.yaml', username=username, password=password, url=url)
 
     # Upload output file, automation log, and functional log to SharePoint
     if os.path.exists(local_output_path):
