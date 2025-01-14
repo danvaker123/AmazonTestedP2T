@@ -1,9 +1,3 @@
 
---- Task: Manage Transmission Configurations | Configuration: Bills Receivable Config ---
-    WARNING: 2024-12-12 13:43:25,504 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
-    SUCCESS: 2024-12-12 13:43:33,510 | INFO | Task 'Manage Transmission Configurations' with Subtask 'Bills Receivable Config' executed successfully.
-
---- Task: Manage Transmission Configurations | Configuration: SDD - Acknowledgement ---
-    WARNING: 2024-12-12 13:43:49,537 | WARNING | Skipping action 'Send Column 3 associated value' because required input value is missing.
-    WARNING: 2024-12-12 13:43:52,538 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
-    SUCCESS: 2024-12-12 13:44:00,547 | INFO | Task 'Manage Transmission Configurations' with Subtask 'SDD - Acknowledgement' executed successfully.
+--- Task: Manage Transmission Configurations | Configuration: CYS SOAP Test Center ---
+    SUCCESS: 2025-01-14 12:50:59,122 | INFO | Task 'Manage Transmission Configurations' with Subtask 'CYS SOAP Test Center' executed successfully.

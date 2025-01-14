@@ -1,10 +1,9 @@
-import argparse as args
+import argparse
 import json
+import logging
 import os
 import time
-import logging
-import argparse
-import chromedriver_autoinstaller
+
 import openpyxl
 import pandas as pd
 import yaml
@@ -14,11 +13,13 @@ from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from selenium import webdriver
 from selenium.common import NoSuchElementException, TimeoutException, ElementClickInterceptedException
 from selenium.webdriver import Keys
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 # Set up logging configuration
 logging.basicConfig(filename='../Logs/automation_log.txt', level=logging.INFO,
@@ -550,23 +551,33 @@ def upload_file_to_sharepoint(site_url, client_id, client_secret, sharepoint_fil
 
 
 def start_browser():
-    # Install the correct version of chromedriver automatically
-    chromedriver_autoinstaller.install()
-
-    # Set up Chrome options
-    options = Options()
-    # options.add_argument("--headless")  # Uncomment if you want headless mode
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-
-    # Uncomment the following line to specify the binary location explicitly if needed
-    # options.binary_location = "/usr/bin/google-chrome"  # Adjust the path if needed
-
     try:
-        # Start Chrome WebDriver
-        driver = webdriver.Chrome(options=options)
-        logging.info("Browser started successfully.")
+        # Use webdriver_manager to ensure the correct chromedriver version is installed
+        chromedriver_path = ChromeDriverManager().install()
+
+        # Set up Chrome options for headless mode
+        options = ChromeOptions()
+        options.headless = True  # Enable headless mode
+        options.add_argument("--no-sandbox")  # Bypass OS security model
+        options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource issues
+        options.add_argument("--disable-gpu")  # Disable GPU acceleration (helpful in headless mode)
+        options.add_argument("--window-size=1920,1080")  # Set window size
+        options.add_argument("--remote-debugging-port=9222")  # Enable remote debugging
+        options.add_argument("--disable-extensions")  # Disable extensions for better performance
+        options.add_argument("--disable-infobars")  # Prevent "Chrome is being controlled" bar
+        options.add_argument("--disable-browser-side-navigation")  # Improve performance
+        options.add_argument("--blink-settings=imagesEnabled=false")  # Disable images for faster loading
+        options.add_argument("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36")  # Custom user-agent
+
+        # Create a Service instance for chromedriver
+        service = ChromeService(executable_path=chromedriver_path)
+
+        # Initialize the WebDriver with options
+        driver = webdriver.Chrome(service=service, options=options)
+
+        logging.info("Headless Chrome browser started successfully.")
         return driver
+
     except Exception as e:
         logging.error(f"Error starting the browser: {e}")
         raise

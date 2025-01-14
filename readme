@@ -2,3 +2,12 @@ pip install -r requirements.txt
 
 
 use this to install all the libraries required to run this script
+
+
+
+but before that make the environment variable for it
+
+run this
+
+python3 -m venv .venv
+source .venv/bin/activate
