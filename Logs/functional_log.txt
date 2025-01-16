@@ -1,3 +1,5 @@
 
---- Task: Manage Transmission Configurations | Configuration: CYS SOAP Test Center ---
-    SUCCESS: 2025-01-14 12:50:59,122 | INFO | Task 'Manage Transmission Configurations' with Subtask 'CYS SOAP Test Center' executed successfully.
+--- Task: Manage Transmission Configurations | Configuration: SDD - Acknowledgement ---
+    WARNING: 2025-01-16 22:41:01,752 | WARNING | Skipping action 'Send Column 3 associated value' because required input value is missing.
+    WARNING: 2025-01-16 22:41:25,509 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
+    SUCCESS: 2025-01-16 22:41:33,788 | INFO | Task 'Manage Transmission Configurations' with Subtask 'SDD - Acknowledgement' executed successfully.

@@ -552,35 +552,40 @@ def upload_file_to_sharepoint(site_url, client_id, client_secret, sharepoint_fil
 
 def start_browser():
     try:
-        # Use webdriver_manager to ensure the correct chromedriver version is installed
+        # Use webdriver_manager to install the correct ChromeDriver
         chromedriver_path = ChromeDriverManager().install()
 
-        # Set up Chrome options for headless mode
+        # Set up Chrome options
         options = ChromeOptions()
-        options.headless = True  # Enable headless mode
-        options.add_argument("--no-sandbox")  # Bypass OS security model
-        options.add_argument("--disable-dev-shm-usage")  # Overcome limited resource issues
-        options.add_argument("--disable-gpu")  # Disable GPU acceleration (helpful in headless mode)
-        options.add_argument("--window-size=1920,1080")  # Set window size
-        options.add_argument("--remote-debugging-port=9222")  # Enable remote debugging
-        options.add_argument("--disable-extensions")  # Disable extensions for better performance
-        options.add_argument("--disable-infobars")  # Prevent "Chrome is being controlled" bar
-        options.add_argument("--disable-browser-side-navigation")  # Improve performance
-        options.add_argument("--blink-settings=imagesEnabled=false")  # Disable images for faster loading
-        options.add_argument("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36")  # Custom user-agent
+        options.add_argument("--headless=new")  # Use new headless mode
+        options.add_argument("--disable-gpu")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-crash-reporter")
+        options.add_argument("--disable-in-process-stack-traces")
+        options.add_argument("--disable-logging")
+        options.add_argument("--disable-extensions")
+        options.add_argument("--window-size=1920,1080")
+        options.add_argument("--remote-debugging-port=9230")
+        options.add_argument("--blink-settings=imagesEnabled=false")  # Disable images
+        options.add_argument("--user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36")  # Custom UA
 
-        # Create a Service instance for chromedriver
+        # Enable logging for debugging
+        options.add_argument("--enable-logging")
+        options.add_argument("--v=1")
+
+        # Create ChromeDriver service
         service = ChromeService(executable_path=chromedriver_path)
 
-        # Initialize the WebDriver with options
+        # Initialize WebDriver
         driver = webdriver.Chrome(service=service, options=options)
-
         logging.info("Headless Chrome browser started successfully.")
         return driver
 
     except Exception as e:
-        logging.error(f"Error starting the browser: {e}")
+        logging.error(f"Error starting the browser: {type(e).__name__}: {e}")
         raise
+
 
 
 def main(input_file_path, output_file_path, sheet_name, config_file_path, username, password, url):
