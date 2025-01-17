@@ -22,7 +22,7 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 # Set up logging configuration
-logging.basicConfig(filename='../Logs/automation_log.txt', level=logging.INFO,
+logging.basicConfig(filename='../app/Logs/automation_log.txt', level=logging.INFO,
                     format='%(asctime)s | %(levelname)s | %(message)s', filemode='w')
 
 
@@ -40,7 +40,7 @@ def functional_log_maker(input_file_path):
     config_names = df['Configuration Name'].to_list()
 
     # Define the log file path
-    log_file_path = "../Logs/automation_log.txt"
+    log_file_path = "../app/Logs/automation_log.txt"
 
     # Read the content of the log file
     with open(log_file_path, 'r') as file:
@@ -90,7 +90,7 @@ def functional_log_maker(input_file_path):
             function_log.append(f"    ERROR: Task '{task}' did not execute successfully.\n")
 
     # Write the structured log to a new file
-    output_file = "../Logs/functional_log.txt"
+    output_file = "../app/Logs/functional_log.txt"
     with open(output_file, 'w') as file:
         for entry in function_log:
             file.write(entry)
@@ -723,17 +723,17 @@ def run_automation_with_sharepoint(url, username, password):
     sharepoint_output_path = "/Shared Documents/Testing"
 
     # Local paths
-    local_input_path = '../Input/input_data.xlsx'
-    local_output_path = '../Input/output_data.xlsx'
-    automation_log_path = "../Logs/automation_log.txt"
-    functional_log_path = "../Logs/functional_log.txt"
+    local_input_path = '../app/Input/input_data.xlsx'
+    local_output_path = '../app/Input/output_data.xlsx'
+    automation_log_path = "../app/Logs/automation_log.txt"
+    functional_log_path = "../app/Logs/functional_log.txt"
 
     # Download input file from SharePoint
     download_file_from_sharepoint(site_url, client_id, client_secret, sharepoint_input_path, local_input_path)
 
     # Run the automation script
     main(input_file_path=local_input_path, output_file_path=local_output_path, sheet_name='Input Details',
-         config_file_path='../Config/config1.yaml', username=username, password=password, url=url)
+         config_file_path='../app/Config/config1.yaml', username=username, password=password, url=url)
 
     # Upload output file, automation log, and functional log to SharePoint
     if os.path.exists(local_output_path):
