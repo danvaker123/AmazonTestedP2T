@@ -1,142 +1,102 @@
-2025-01-16 22:38:58,144 | INFO | Automation process started.
-2025-01-16 22:38:58,332 | INFO | ====== WebDriver manager ======
-2025-01-16 22:38:58,499 | INFO | Get LATEST chromedriver version for google-chrome
-2025-01-16 22:38:58,616 | INFO | Get LATEST chromedriver version for google-chrome
-2025-01-16 22:38:58,747 | INFO | Driver [/home/danvaker/.wdm/drivers/chromedriver/linux64/131.0.6778.264/chromedriver-linux64/chromedriver] found in cache
-2025-01-16 22:38:59,351 | INFO | Headless Chrome browser started successfully.
-2025-01-16 22:39:05,150 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com
-2025-01-16 22:39:10,350 | INFO | Clicked element with locator 'userid'
-2025-01-16 22:39:10,523 | INFO | Sent keys to element with locator 'userid': Casey.Brown
-2025-01-16 22:39:10,783 | INFO | Clicked element with locator 'password'
-2025-01-16 22:39:11,064 | INFO | Sent keys to element with locator 'password': Ne2?4eW*
-2025-01-16 22:39:24,141 | INFO | Clicked element with locator 'btnActive'
-2025-01-16 22:39:24,141 | INFO | Waiting for 10 seconds...
-2025-01-16 22:39:34,345 | INFO | Clicked element with locator 'pt1:_UIScmil3u'
-2025-01-16 22:39:34,345 | INFO | Waiting for 10 seconds...
-2025-01-16 22:39:47,936 | INFO | Clicked element with locator 'pt1:_UIScmi4'
-2025-01-16 22:39:47,937 | INFO | Waiting for 10 seconds...
-2025-01-16 22:39:58,069 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
-2025-01-16 22:39:58,069 | INFO | Waiting for 5 seconds...
-2025-01-16 22:40:03,234 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
-2025-01-16 22:40:03,234 | INFO | Waiting for 5 seconds...
-2025-01-16 22:40:08,457 | INFO | Sent keys to element with locator 'pt1:r1:0:r0:1:AP1:s9:it1::content': Manage Transmission Configurations
-2025-01-16 22:40:08,458 | INFO | Waiting for 5 seconds...
-2025-01-16 22:40:13,583 | INFO | Clicked element with locator 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
-2025-01-16 22:40:13,583 | INFO | Waiting for 5 seconds...
-2025-01-16 22:40:18,744 | INFO | Clicked element with locator '//*[contains(text(), 'Manage Transmission Configurations')]'
-2025-01-16 22:40:18,744 | INFO | Waiting for 5 seconds...
-2025-01-16 22:40:23,896 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content'
-2025-01-16 22:40:24,026 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content': SDD - Acknowledgement
-2025-01-16 22:40:24,147 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1::search'
-2025-01-16 22:40:24,148 | INFO | Waiting for 5 seconds...
-2025-01-16 22:40:29,249 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(), 'SDD - Acknowledgement')]'
-2025-01-16 22:40:29,250 | INFO | Waiting for 5 seconds...
-2025-01-16 22:40:34,385 | INFO | Clicked element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']'
-2025-01-16 22:40:34,413 | INFO | Retrieved value from element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']': oshfosfonsofno
-2025-01-16 22:40:34,644 | INFO | Sent keys to element with locator '//*[contains(text(), '*Account Name')]/following::input[@type='text']': fnsjfpskpkp
-2025-01-16 22:40:34,644 | INFO | Waiting for 3 seconds...
-2025-01-16 22:40:37,754 | INFO | Clicked element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']'
-2025-01-16 22:40:37,790 | INFO | Retrieved value from element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']': okdoksndonso
-2025-01-16 22:40:37,962 | INFO | Sent keys to element with locator '//*[contains(text(), '*File Name')]/following::input[@type='text']': dmsmpmspdmpsmdp
-2025-01-16 22:40:37,963 | INFO | Waiting for 3 seconds...
-2025-01-16 22:40:51,429 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+2025-01-17 08:50:25,932 | INFO | Automation process started.
+2025-01-17 08:50:26,283 | INFO | ====== WebDriver manager ======
+2025-01-17 08:50:26,891 | INFO | Get LATEST chromedriver version for google-chrome
+2025-01-17 08:50:26,914 | INFO | Get LATEST chromedriver version for google-chrome
+2025-01-17 08:50:26,928 | INFO | Get LATEST chromedriver version for google-chrome
+2025-01-17 08:50:26,991 | INFO | WebDriver version 131.0.6778.264 selected
+2025-01-17 08:50:26,994 | INFO | Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.264/linux64/chromedriver-linux64.zip
+2025-01-17 08:50:26,994 | INFO | About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.264/linux64/chromedriver-linux64.zip
+2025-01-17 08:50:27,016 | INFO | Driver downloading response is 200
+2025-01-17 08:50:27,164 | INFO | Get LATEST chromedriver version for google-chrome
+2025-01-17 08:50:27,371 | INFO | Driver has been saved in cache [/home/ec2-user/.wdm/drivers/chromedriver/linux64/131.0.6778.264]
+2025-01-17 08:50:29,083 | INFO | Headless Chrome browser started successfully.
+2025-01-17 08:50:31,753 | INFO | Opened URL: https://fa-etan-dev14-saasfademo1.ds-fa.oraclepdemos.com
+2025-01-17 08:50:36,875 | INFO | Clicked element with locator 'userid'
+2025-01-17 08:50:36,977 | INFO | Sent keys to element with locator 'userid': Casey.Brown
+2025-01-17 08:50:37,050 | INFO | Clicked element with locator 'password'
+2025-01-17 08:50:37,132 | INFO | Sent keys to element with locator 'password': Ne2?4eW*
+2025-01-17 08:50:51,094 | INFO | Clicked element with locator 'btnActive'
+2025-01-17 08:50:51,096 | INFO | Waiting for 10 seconds...
+2025-01-17 08:51:01,218 | INFO | Clicked element with locator 'pt1:_UIScmil3u'
+2025-01-17 08:51:01,218 | INFO | Waiting for 10 seconds...
+2025-01-17 08:51:14,971 | INFO | Clicked element with locator 'pt1:_UIScmi4'
+2025-01-17 08:51:14,972 | INFO | Waiting for 10 seconds...
+2025-01-17 08:51:25,144 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:sdi10::icon'
+2025-01-17 08:51:25,145 | INFO | Waiting for 5 seconds...
+2025-01-17 08:51:30,290 | INFO | Clicked element with locator 'pt1:r1:0:r0:0:r1:0:AP1:r10:0:i3:7:cl11'
+2025-01-17 08:51:30,291 | INFO | Waiting for 5 seconds...
+2025-01-17 08:51:35,626 | INFO | Sent keys to element with locator 'pt1:r1:0:r0:1:AP1:s9:it1::content': Manage Transmission Configurations
+2025-01-17 08:51:35,627 | INFO | Waiting for 5 seconds...
+2025-01-17 08:51:40,734 | INFO | Clicked element with locator 'pt1:r1:0:r0:1:AP1:s9:ctb1::icon'
+2025-01-17 08:51:40,734 | INFO | Waiting for 5 seconds...
+2025-01-17 08:51:45,873 | INFO | Clicked element with locator '//*[contains(text(), 'Manage Transmission Configurations')]'
+2025-01-17 08:51:45,874 | INFO | Waiting for 5 seconds...
+2025-01-17 08:51:51,019 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content'
+2025-01-17 08:51:51,223 | INFO | Sent keys to element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1:value10::content': Bills Receivable Config
+2025-01-17 08:51:51,365 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:q1::search'
+2025-01-17 08:51:51,365 | INFO | Waiting for 5 seconds...
+2025-01-17 08:51:56,476 | INFO | Clicked element with locator '//div[@id='pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:0:AP1:AT1:_ATp:t1::db']//*[contains(text(), 'Bills Receivable Config')]'
+2025-01-17 08:51:56,476 | INFO | Waiting for 5 seconds...
+2025-01-17 08:52:01,638 | INFO | Clicked element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']'
+2025-01-17 08:52:01,671 | INFO | Retrieved value from element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']': test1
+2025-01-17 08:52:01,864 | INFO | Sent keys to element with locator '//*[contains(text(), 'File Directory')]/following::input[@type='text']': test1
+2025-01-17 08:52:01,864 | INFO | Waiting for 3 seconds...
+2025-01-17 08:52:04,999 | INFO | Clicked element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']'
+2025-01-17 08:52:05,049 | INFO | Retrieved value from element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']': test2
+2025-01-17 08:52:05,161 | INFO | Sent keys to element with locator '//*[contains(text(), 'File Name')]/following::input[@type='text']': test2
+2025-01-17 08:52:05,161 | INFO | Waiting for 3 seconds...
+2025-01-17 08:52:08,323 | INFO | Clicked element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']'
+2025-01-17 08:52:08,338 | INFO | Retrieved value from element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']': test3
+2025-01-17 08:52:08,506 | INFO | Sent keys to element with locator '//*[contains(text(), 'Append To File (Y/N)')]/following::input[@type='text']': test3
+2025-01-17 08:52:08,507 | INFO | Waiting for 3 seconds...
+2025-01-17 08:52:21,988 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
 Stacktrace:
-#0 0x5a095ca6d1fa <unknown>
-#1 0x5a095c57d810 <unknown>
-#2 0x5a095c5cc506 <unknown>
-#3 0x5a095c5cc7a1 <unknown>
-#4 0x5a095c611c24 <unknown>
-#5 0x5a095c5f05ad <unknown>
-#6 0x5a095c60f007 <unknown>
-#7 0x5a095c5f0323 <unknown>
-#8 0x5a095c5bede0 <unknown>
-#9 0x5a095c5bfdbe <unknown>
-#10 0x5a095ca3912b <unknown>
-#11 0x5a095ca3d0c7 <unknown>
-#12 0x5a095ca266cc <unknown>
-#13 0x5a095ca3dc47 <unknown>
-#14 0x5a095ca0b67f <unknown>
-#15 0x5a095ca5c288 <unknown>
-#16 0x5a095ca5c450 <unknown>
-#17 0x5a095ca6c076 <unknown>
-#18 0x7159ec29ca94 <unknown>
-#19 0x7159ec329c3c <unknown>
+#0 0x559d28f451fa <unknown>
+#1 0x559d28a55810 <unknown>
+#2 0x559d28aa4506 <unknown>
+#3 0x559d28aa47a1 <unknown>
+#4 0x559d28ae9c24 <unknown>
+#5 0x559d28ac85ad <unknown>
+#6 0x559d28ae7007 <unknown>
+#7 0x559d28ac8323 <unknown>
+#8 0x559d28a96de0 <unknown>
+#9 0x559d28a97dbe <unknown>
+#10 0x559d28f1112b <unknown>
+#11 0x559d28f150c7 <unknown>
+#12 0x559d28efe6cc <unknown>
+#13 0x559d28f15c47 <unknown>
+#14 0x559d28ee367f <unknown>
+#15 0x559d28f34288 <unknown>
+#16 0x559d28f34450 <unknown>
+#17 0x559d28f44076 <unknown>
+#18 0x7f9fb609f7f2 start_thread
 
-2025-01-16 22:41:01,751 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
+2025-01-17 08:52:32,459 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
 Stacktrace:
-#0 0x5a095ca6d1fa <unknown>
-#1 0x5a095c57d810 <unknown>
-#2 0x5a095c5cc506 <unknown>
-#3 0x5a095c5cc7a1 <unknown>
-#4 0x5a095c611c24 <unknown>
-#5 0x5a095c5f05ad <unknown>
-#6 0x5a095c60f007 <unknown>
-#7 0x5a095c5f0323 <unknown>
-#8 0x5a095c5bede0 <unknown>
-#9 0x5a095c5bfdbe <unknown>
-#10 0x5a095ca3912b <unknown>
-#11 0x5a095ca3d0c7 <unknown>
-#12 0x5a095ca266cc <unknown>
-#13 0x5a095ca3dc47 <unknown>
-#14 0x5a095ca0b67f <unknown>
-#15 0x5a095ca5c288 <unknown>
-#16 0x5a095ca5c450 <unknown>
-#17 0x5a095ca6c076 <unknown>
-#18 0x7159ec29ca94 <unknown>
-#19 0x7159ec329c3c <unknown>
+#0 0x559d28f451fa <unknown>
+#1 0x559d28a55810 <unknown>
+#2 0x559d28aa4506 <unknown>
+#3 0x559d28aa47a1 <unknown>
+#4 0x559d28ae9c24 <unknown>
+#5 0x559d28ac85ad <unknown>
+#6 0x559d28ae7007 <unknown>
+#7 0x559d28ac8323 <unknown>
+#8 0x559d28a96de0 <unknown>
+#9 0x559d28a97dbe <unknown>
+#10 0x559d28f1112b <unknown>
+#11 0x559d28f150c7 <unknown>
+#12 0x559d28efe6cc <unknown>
+#13 0x559d28f15c47 <unknown>
+#14 0x559d28ee367f <unknown>
+#15 0x559d28f34288 <unknown>
+#16 0x559d28f34450 <unknown>
+#17 0x559d28f44076 <unknown>
+#18 0x7f9fb609f7f2 start_thread
 
-2025-01-16 22:41:01,752 | WARNING | Skipping action 'Send Column 3 associated value' because required input value is missing.
-2025-01-16 22:41:01,752 | INFO | Waiting for 3 seconds...
-2025-01-16 22:41:15,060 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
-Stacktrace:
-#0 0x5a095ca6d1fa <unknown>
-#1 0x5a095c57d810 <unknown>
-#2 0x5a095c5cc506 <unknown>
-#3 0x5a095c5cc7a1 <unknown>
-#4 0x5a095c611c24 <unknown>
-#5 0x5a095c5f05ad <unknown>
-#6 0x5a095c60f007 <unknown>
-#7 0x5a095c5f0323 <unknown>
-#8 0x5a095c5bede0 <unknown>
-#9 0x5a095c5bfdbe <unknown>
-#10 0x5a095ca3912b <unknown>
-#11 0x5a095ca3d0c7 <unknown>
-#12 0x5a095ca266cc <unknown>
-#13 0x5a095ca3dc47 <unknown>
-#14 0x5a095ca0b67f <unknown>
-#15 0x5a095ca5c288 <unknown>
-#16 0x5a095ca5c450 <unknown>
-#17 0x5a095ca6c076 <unknown>
-#18 0x7159ec29ca94 <unknown>
-#19 0x7159ec329c3c <unknown>
-
-2025-01-16 22:41:25,509 | WARNING | Could not find element with locator '//*[contains(text(), 'None')]/following::input[@type='text']': Message: 
-Stacktrace:
-#0 0x5a095ca6d1fa <unknown>
-#1 0x5a095c57d810 <unknown>
-#2 0x5a095c5cc506 <unknown>
-#3 0x5a095c5cc7a1 <unknown>
-#4 0x5a095c611c24 <unknown>
-#5 0x5a095c5f05ad <unknown>
-#6 0x5a095c60f007 <unknown>
-#7 0x5a095c5f0323 <unknown>
-#8 0x5a095c5bede0 <unknown>
-#9 0x5a095c5bfdbe <unknown>
-#10 0x5a095ca3912b <unknown>
-#11 0x5a095ca3d0c7 <unknown>
-#12 0x5a095ca266cc <unknown>
-#13 0x5a095ca3dc47 <unknown>
-#14 0x5a095ca0b67f <unknown>
-#15 0x5a095ca5c288 <unknown>
-#16 0x5a095ca5c450 <unknown>
-#17 0x5a095ca6c076 <unknown>
-#18 0x7159ec29ca94 <unknown>
-#19 0x7159ec329c3c <unknown>
-
-2025-01-16 22:41:25,509 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
-2025-01-16 22:41:25,509 | INFO | Waiting for 3 seconds...
-2025-01-16 22:41:28,648 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:1:AP1:APscl2'
-2025-01-16 22:41:28,648 | INFO | Waiting for 5 seconds...
-2025-01-16 22:41:33,788 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
-2025-01-16 22:41:33,788 | INFO | Task 'Manage Transmission Configurations' with Subtask 'SDD - Acknowledgement' executed successfully.
-2025-01-16 22:41:33,868 | INFO | Closed the final browser.
+2025-01-17 08:52:32,461 | WARNING | Skipping action 'Send Column 4 associated value' because required input value is missing.
+2025-01-17 08:52:32,461 | INFO | Waiting for 3 seconds...
+2025-01-17 08:52:35,658 | INFO | Clicked element with locator 'pt1:r1:0:rt:1:r2:0:dynamicRegion1:0:pt1:Trans1:1:AP1:APscl2'
+2025-01-17 08:52:35,659 | INFO | Waiting for 5 seconds...
+2025-01-17 08:52:40,804 | INFO | Clicked element with locator 'd1::msgDlg::cancel'
+2025-01-17 08:52:40,804 | INFO | Task 'Manage Transmission Configurations' with Subtask 'Bills Receivable Config' executed successfully.
+2025-01-17 08:52:40,889 | INFO | Closed the final browser.
